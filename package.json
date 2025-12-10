@@ -1,0 +1,48 @@
+{
+  "name": "new-theme",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss:assets/css",
+    "compile:sass:watch": "sass scss:assets/css --watch",
+    "compile:ts": "tsc",
+    "compile:ts:watch": "tsc --watch",
+    "compile:all": "npm run compile:sass && npm run compile:ts",
+    "compile:watch": "concurrently \"npm run compile:sass:watch\" \"npm run compile:ts:watch\"",
+    "compile:all:watch": "npm run compile:watch",
+    "copy:libs": "npm-run-all copy:libs:css copy:libs:js copy:libs:fonts",
+    "copy:libs:css": "copyfiles -u 1 \"node_modules/bootstrap/dist/css/*.min.css\" \"node_modules/animate.css/animate.min.css\" \"node_modules/swiper/swiper-bundle.min.css\" \"node_modules/aos/dist/aos.css\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.css\" \"node_modules/@fortawesome/fontawesome-free/css/all.min.css\" \"assets/vendors/css/\"",
+    "copy:libs:js": "copyfiles -u 1 \"node_modules/jquery/dist/jquery.min.js\" \"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js\" \"node_modules/gsap/dist/gsap.min.js\" \"node_modules/swiper/swiper-bundle.min.js\" \"node_modules/aos/dist/aos.js\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.js\" \"assets/vendors/js/\"",
+    "copy:libs:fonts": "copyfiles -u 2 \"node_modules/@fortawesome/fontawesome-free/webfonts/*\" \"assets/fonts/\"",
+    "build": "npm run copy:libs && npm run compile:sass && npm run compile:ts"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/isotope-layout": "^3.0.15",
+    "@types/jquery": "^3.5.33",
+    "copyfiles": "^2.4.1",
+    "magnific-popup": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.95.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@types/waypoints": "^4.0.7",
+    "animate.css": "^4.1.1",
+    "autoprefixer": "^10.4.22",
+    "bootstrap": "^5.3.8",
+    "gsap": "^3.14.1",
+    "jquery": "^3.7.1",
+    "jquery.ripples": "^0.6.3",
+    "particles.js": "^2.0.0",
+    "postcss-cli": "^11.0.1",
+    "save": "^2.9.0",
+    "smooth-scrollbar": "^8.8.4",
+    "swiper": "^12.0.3",
+    "wow.js": "^1.2.2"
+  }
+}
