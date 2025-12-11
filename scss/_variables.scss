@@ -1,9 +1,13 @@
 // Design tokens aligned to provided palette & typography
 
 // Palette
-$color-primary: #053333; // Sacramento – primary/background
-$color-secondary: #c7f266; // Lime – text & buttons
+$color-primary: #001d3d; // Prussian Blue
+$color-secondary: #ffc300; // School Bus Yellow
+$color-accent: #ffd60a; // Gold
 $color-neutral: #ffffff; // White
+$color-surface: #003566; // Regal Navy (surfaces)
+$color-bg: #000814; // Ink Black (deep background)
+$color-text: #000814; // Dark text for light backgrounds
 
 // Typography
 $font-family-base: 'Overused Grotesk', 'Helvetica Neue', Arial, sans-serif;
@@ -50,7 +54,11 @@ $transition-base: 250ms ease;
 :root {
   --color-primary: #{$color-primary};
   --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
   --color-neutral: #{$color-neutral};
+  --color-surface: #{$color-surface};
+  --color-bg: #{$color-bg};
+  --color-text: #{$color-text};
 
   --font-family-base: #{$font-family-base};
   --font-size-base: #{$font-size-base};
