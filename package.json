@@ -9,10 +9,10 @@
   "scripts": {
     "compile:sass": "sass scss:assets/css",
     "compile:sass:watch": "sass scss:assets/css --watch",
-    "compile:ts": "tsc",
-    "compile:ts:watch": "tsc --watch",
+    "compile:ts": "tsc -p tsconfig.json",
+    "compile:ts:watch": "tsc -p tsconfig.json --watch",
     "compile:all": "npm run compile:sass && npm run compile:ts",
-    "compile:watch": "concurrently \"npm run compile:sass:watch\" \"npm run compile:ts:watch\"",
+    "compile:watch": "npm-run-all --parallel compile:sass:watch compile:ts:watch",
     "compile:all:watch": "npm run compile:watch",
     "copy:libs": "npm-run-all copy:libs:css copy:libs:js copy:libs:fonts",
     "copy:libs:css": "copyfiles -u 1 \"node_modules/bootstrap/dist/css/*.min.css\" \"node_modules/animate.css/animate.min.css\" \"node_modules/swiper/swiper-bundle.min.css\" \"node_modules/aos/dist/aos.css\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.css\" \"node_modules/@fortawesome/fontawesome-free/css/all.min.css\" \"assets/vendors/css/\"",
@@ -28,7 +28,8 @@
     "copyfiles": "^2.4.1",
     "magnific-popup": "^1.2.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.95.1"
+    "sass": "^1.95.1",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",

@@ -1,33 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var hero = document.querySelector('.hero');
-    var swiperEl = document.querySelector('.hero__swiper');
+document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.hero');
+    const swiperEl = document.querySelector('.hero__swiper');
     if (!hero || !swiperEl || typeof Swiper === 'undefined')
         return;
-    var swiper = new Swiper('.hero__swiper', {
+    const swiper = new Swiper('.hero__swiper', {
         loop: true,
         speed: 900,
         autoplay: {
             delay: 5000,
-            disableOnInteraction: false
+            disableOnInteraction: false,
         },
         pagination: {
             el: '.hero__pagination',
-            clickable: true
+            clickable: true,
         },
         effect: 'slide',
         grabCursor: true,
         on: {
-            init: function () {
+            init: () => {
                 hero.classList.add('is-ready');
             },
-            slideChangeTransitionStart: function () {
+            slideChangeTransitionStart: () => {
                 hero.classList.remove('is-ready');
             },
-            slideChangeTransitionEnd: function () {
+            slideChangeTransitionEnd: () => {
                 hero.classList.add('is-ready');
-            }
-        }
+            },
+        },
     });
+    // Expose if debugging needed
     window.heroSwiper = swiper;
 });
-
+//# sourceMappingURL=main.js.map

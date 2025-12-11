@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": false,
+    "checkJs": false,
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "rootDir": "ts",
+    "outDir": "assets/js",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "lib": ["DOM", "ES2020"]
+  },
+  "include": ["ts/**/*"]
+}
+
