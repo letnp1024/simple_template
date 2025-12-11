@@ -11956,7 +11956,7 @@ textarea.form-control-lg {
 .hero {
   position: relative;
   padding: 0;
-  min-height: 80vh;
+  min-height: 100vh;
   color: #ffffff;
   overflow: hidden;
   background-color: #053333;
@@ -11997,13 +11997,13 @@ textarea.form-control-lg {
   position: relative;
   z-index: 1;
   height: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 .hero .hero__swiper .swiper-slide {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 .hero .hero__swiper .swiper-slide .hero__bg {
