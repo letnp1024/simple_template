@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Template</title>
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendors/css/bootstrap.min.css" />
+  <!-- Font Awesome is bundled via SCSS with correct font paths -->
+  <link rel="stylesheet" href="assets/vendors/css/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/css/swiper-bundle.min.css" />
+
+  <!-- Main style (compiled from scss/style.scss) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <!-- Info Row overlay -->
+    <div class="info-row">
+      <div class="container">
+        <div class="row gy-2">
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-phone"></i></span>
+              <div class="info-row__value">+84 123 456 789</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-envelope"></i></span>
+              <div class="info-row__value">hello@company.com</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-location-dot"></i></span>
+              <div class="info-row__value">123 Business Street</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="hero__overlay"></div>
+
+    <!-- Nav on top of hero -->
+    <nav class="navbar navbar-expand-lg hero__navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">BrandName</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Slider -->
+    <div class="hero__swiper swiper">
+      <div class="swiper-wrapper">
+        <!-- Single slide with dual backgrounds crossfading -->
+        <div class="swiper-slide">
+          <div class="hero__bg" style="background-image: url('images/hero/hero1.jpg');"></div>
+          <div class="hero__bg is-top" style="background-image: url('images/hero/hero.jpg');"></div>
+          <div class="container">
+            <div class="hero__content hero__content--primary">
+              <h1>Built for ambitious teams</h1>
+              <p class="lead">Modern experiences that combine strategy, design, and technology to move your business faster.</p>
+              <a class="btn btn-dark" href="#contact">Talk to us</a>
+            </div>
+
+            <div class="hero__content hero__content--secondary">
+              <h1>Hear what our clients say</h1>
+              <p class="lead">Impactful partnerships that deliver measurable outcomes across industries.</p>
+              <div class="hero__avatars">
+                <div class="hero__avatar"><img src="images/testimonial/testimonial-01.jpg" alt="Client 1"></div>
+                <div class="hero__avatar"><img src="images/testimonial/testimonial-02.jpg" alt="Client 2"></div>
+                <div class="hero__avatar"><img src="images/testimonial/testimonial-04.jpg" alt="Client 3"></div>
+                <div class="hero__avatar"><img src="images/testimonial/testimonial-05.jpg" alt="Client 4"></div>
+                <div class="hero__avatar"><img src="images/testimonial/testimonial-06.jpg" alt="Client 5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination hero__pagination"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <h2 class="fw-light mb-3">About Us</h2>
+          <p>We are a corporate/agency-focused team delivering products and services with emphasis on performance, brand, and usability.</p>
+          <p>Customizable components, clear sections, and ready-to-integrate WordPress structure.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="p-3 bg-white shadow-sm rounded-3 text-center">
+                <div class="h2 fw-bold text-secondary">120+</div>
+                <div class="text-muted">Projects</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-3 bg-white shadow-sm rounded-3 text-center">
+                <div class="h2 fw-bold text-secondary">50+</div>
+                <div class="text-muted">Clients</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="p-3 bg-white shadow-sm rounded-3">
+                <div class="fw-semibold">Why us?</div>
+                <ul class="mb-0">
+                  <li>Responsive-first layout</li>
+                  <li>Clean SCSS variables</li>
+                  <li>Ready for CPT/Customizer in WP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Products -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Products & Services</h2>
+        <p class="text-muted">Highlight your core offerings</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="text-secondary"><i class="fa-solid fa-briefcase fa-lg"></i></span>
+              <h5 class="mb-0">Consulting</h5>
+            </div>
+            <p class="text-muted mb-0">Business consulting with measurable outcomes and clear roadmaps.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="text-secondary"><i class="fa-solid fa-laptop-code fa-lg"></i></span>
+              <h5 class="mb-0">Digital Products</h5>
+            </div>
+            <p class="text-muted mb-0">SaaS and platform builds with modern stacks and scalable design.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="text-secondary"><i class="fa-solid fa-chart-line fa-lg"></i></span>
+              <h5 class="mb-0">Growth</h5>
+            </div>
+            <p class="text-muted mb-0">Marketing, analytics, and optimization for revenue and retention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Categories</h2>
+        <p class="text-muted">Organize offerings or blog topics</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Corporate</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Technology</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Finance</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Product</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Latest News</h2>
+        <p class="text-muted">Company updates and insights</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <article class="card h-100 shadow-sm">
+            <img src="images/news-1.jpg" class="card-img-top" alt="News 1">
+            <div class="card-body">
+              <h5 class="card-title">Launch: New Product Suite</h5>
+              <p class="card-text text-muted">Discover the latest tools designed for enterprise teams.</p>
+              <a href="#" class="link-secondary">Read more</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="card h-100 shadow-sm">
+            <img src="images/news-2.jpg" class="card-img-top" alt="News 2">
+            <div class="card-body">
+              <h5 class="card-title">Case Study: Growth</h5>
+              <p class="card-text text-muted">How we helped increase ARR by 40% in 9 months.</p>
+              <a href="#" class="link-secondary">Read more</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="card h-100 shadow-sm">
+            <img src="images/news-3.jpg" class="card-img-top" alt="News 3">
+            <div class="card-body">
+              <h5 class="card-title">Inside: Culture</h5>
+              <p class="card-text text-muted">Meet the team and our way of building together.</p>
+              <a href="#" class="link-secondary">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Portfolio</h2>
+        <p class="text-muted">Selected projects</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Enterprise Platform</h5>
+              <p class="card-text text-muted">Scalable platform for B2B operations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Analytics Dashboard</h5>
+              <p class="card-text text-muted">Data-rich insights with clean UI.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Site</h5>
+              <p class="card-text text-muted">High-converting landing experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Testimonials</h2>
+        <p class="text-muted">What clients say</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <p class="mb-3">“Exceptional delivery, clear communication, and tangible business results.”</p>
+            <div class="fw-semibold">Jane Doe</div>
+            <div class="text-muted">CMO, Acme Corp</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <p class="mb-3">“A reliable partner for complex builds and rapid iterations.”</p>
+            <div class="fw-semibold">Michael Lee</div>
+            <div class="text-muted">VP Product, Northstar</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
+            <p class="mb-3">“Design quality and performance exceeded our expectations.”</p>
+            <div class="fw-semibold">Sara Nguyen</div>
+            <div class="text-muted">Founder, GrowthLabs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <h2 class="fw-light mb-3">Contact</h2>
+          <p>Tell us about your project. We respond within 1 business day.</p>
+          <ul class="list-unstyled text-muted">
+            <li><i class="fa-solid fa-phone me-2 text-secondary"></i>+84 123 456 789</li>
+            <li><i class="fa-solid fa-envelope me-2 text-secondary"></i>hello@company.com</li>
+            <li><i class="fa-solid fa-location-dot me-2 text-secondary"></i>123 Business Street</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="Project inquiry" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Brief description" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-dark px-4">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-6">
+          <div class="fw-semibold">BrandName</div>
+          <div class="text-white-50">Corporate template — ready for WordPress integration.</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="text-white-50 me-3" href="#hero">Home</a>
+          <a class="text-white-50 me-3" href="#services">Services</a>
+          <a class="text-white-50 me-3" href="#portfolio">Portfolio</a>
+          <a class="text-white-50" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendors/js/jquery.min.js"></script>
+  <script src="assets/vendors/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendors/js/gsap.min.js"></script>
+  <script src="assets/vendors/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

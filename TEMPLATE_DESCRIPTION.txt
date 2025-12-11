@@ -1,0 +1,95 @@
+Lộ Trình Phát Triển Theme Doanh Nghiệp (Business/Corporate Theme)
+Kế hoạch này tập trung vào quy trình từ thiết kế tĩnh (HTML/CSS) đến tích hợp WordPress và hoàn thiện sản phẩm.
+________________________________________
+Giai đoạn 1: Thiết kế Giao diện Tĩnh (HTML/CSS & Assets)
+Mục tiêu: Xây dựng toàn bộ giao diện người dùng (UI) một cách độc lập, đảm bảo tính responsive và chất lượng code.
+1.1. Thiết lập Cấu trúc Dự án
+•	Tạo thư mục dự án với cấu trúc cơ bản (css/, js/, images/, fonts/).
+•	Thiết lập môi trường CSS (Sass/LESS hoặc chỉ CSS thuần) và các thư viện JS cần thiết (ví dụ: jQuery, Bootstrap - nếu cần).
+1.2. Phát triển Trang (Page Development)
+Loại Trang (Page Type)	Phiên bản (Variations)	Mô tả Công việc Chi tiết
+Trang Chủ (Homepage)	Home 1 (Default): Hiện đại, tập trung vào dịch vụ/dự án.	Xây dựng Header (logo, menu), Hero Section (slider/video), Section Về chúng tôi (About Us), Dịch vụ (Services), Dự án/Portfolio, Lời chứng thực (Testimonials), Kêu gọi hành động (CTA), Footer.
+	Home 2 (Agency): Tập trung vào đội ngũ, quy trình làm việc.	Thay thế/Tùy chỉnh các section phù hợp với mô hình Agency (ví dụ: Team, Working Process).
+	Home 3 (Product/SaaS): Tập trung vào tính năng sản phẩm, giá cả.	Thay thế/Tùy chỉnh các section tập trung vào tính năng (Features), Bảng giá (Pricing Tables), FAQ.
+Trang Nội dung Cốt lõi	About Us (Về chúng tôi)	Lịch sử, Tầm nhìn/Sứ mệnh, Đội ngũ (Team Members), Giải thưởng/Thành tích.
+	Contact Us (Liên hệ)	Thông tin liên hệ, Bản đồ (placeholder), Biểu mẫu liên hệ (HTML form markup).
+	Services (Dịch vụ)	Trang tổng quan các dịch vụ (Grid/List View).
+	Services - Single	Trang chi tiết từng dịch vụ.
+Trang Danh mục/Tin tức	Blog Grid/List View	Trang liệt kê bài viết.
+	Single Post	Trang chi tiết bài viết (bao gồm sidebar, comment section markup).
+Trang Dự án/Portfolio	Portfolio Grid 2/3/4 Columns	Trang tổng quan các dự án.
+	Portfolio - Single	Trang chi tiết dự án (Case Study).
+Các trang Khác	Testimonials	Trang riêng liệt kê tất cả các lời chứng thực (nếu không đặt ở trang chủ).
+	FAQ	Trang Câu hỏi Thường gặp (sử dụng Collapse/Accordion markup).
+	404 Page	Trang báo lỗi 404 tùy chỉnh.
+1.3. Đảm bảo Kỹ thuật Giao diện
+•	Responsive: Sử dụng Media Queries để đảm bảo thiết kế hoạt động tốt trên mọi kích thước màn hình.
+•	Tương tác (Interactivity): Thêm hiệu ứng CSS/JS nhỏ (Hover, Animation, Slider).
+•	Kiểm tra Cross-browser: Kiểm tra hiển thị trên các trình duyệt chính (Chrome, Firefox, Safari).
+________________________________________
+Giai đoạn 2: Chuyển đổi thành Theme WordPress (Theme Integration)
+Mục tiêu: Cắt HTML/CSS thành các file template PHP của WordPress.
+2.1. Thiết lập Cấu trúc Theme WordPress
+•	Tạo file cơ bản: style.css (bao gồm thông tin theme), index.php, header.php, footer.php, sidebar.php, functions.php.
+•	Tạo thư mục inc/ (cho các chức năng theme), assets/ (chứa CSS/JS/Images tĩnh).
+2.2. Tích hợp Cấu trúc & Assets
+•	Tích hợp Header & Footer: Cắt nội dung HTML của header và footer vào header.php và footer.php.
+•	Sử dụng các hàm WordPress: $wp_head(), $wp_footer(), $bloginfo('name').
+•	Enqueue Styles/Scripts: Đăng ký và đưa CSS/JS vào theme bằng hàm wp_enqueue_style() và wp_enqueue_script() trong functions.php.
+2.3. Tích hợp Nội dung Động (Dynamic Content)
+•	Menu: Đăng ký vị trí menu trong functions.php (register_nav_menus) và hiển thị menu bằng wp_nav_menu() trong header.php.
+•	Vòng lặp (The Loop): Áp dụng The Loop (if ( have_posts() ) : while ( have_posts() ) : the_post();...) cho các file template.
+•	Sidebar & Widget: Đăng ký Sidebar (register_sidebar) và hiển thị bằng dynamic_sidebar().
+2.4. Template cho Trang & Bài viết
+•	Tạo các file template cần thiết: page.php, single.php, archive.php, 404.php.
+•	Post Formats: Hỗ trợ các định dạng bài viết nếu cần.
+________________________________________
+Giai đoạn 3: Tính năng Cốt lõi & Tùy biến (Core Functionality & Customization)
+Mục tiêu: Biến theme thành sản phẩm có thể tùy chỉnh dễ dàng và hỗ trợ các loại nội dung chuyên biệt của doanh nghiệp.
+3.1. Loại Bài viết Tùy chỉnh (Custom Post Types - CPTs)
+•	Đăng ký CPTs trong functions.php hoặc qua một plugin chức năng riêng:
+o	Dịch vụ (Services)
+o	Dự án (Portfolio)
+o	Thành viên Đội ngũ (Team Members)
+o	Lời chứng thực (Testimonials)
+•	Tạo các file template riêng cho CPTs (ví dụ: archive-service.php, single-project.php).
+3.2. Hỗ trợ Plugin Bắt buộc
+•	Tích hợp thư viện TGM Plugin Activation để khuyến nghị/yêu cầu cài đặt các plugin cần thiết (ACF, Contact Form 7, Page Builder).
+3.3. Tùy chọn Theme (Theme Options)
+•	Customizer API: Sử dụng WordPress Customizer để tùy chỉnh màu sắc, logo, layout cơ bản (phương pháp khuyến nghị).
+•	Advanced Custom Fields (ACF): Sử dụng ACF để tạo các trường dữ liệu tùy chỉnh cho các CPTs (ví dụ: thông tin chi tiết dự án, chức danh thành viên đội ngũ).
+3.4. Tích hợp Page Builder (Ví dụ: Elementor/WPBakery)
+•	Tạo các widget/module tùy chỉnh cho Page Builder để người dùng dễ dàng xây dựng các section (ví dụ: Section Dịch vụ, Section Bảng giá).
+________________________________________
+Giai đoạn 4: Hoàn thiện & Chuẩn bị Bán hàng
+Mục tiêu: Đóng gói và tối ưu hóa theme cho ThemeForest.
+•	Demo Content (Nội dung Demo):
+o	Tạo file XML chứa nội dung mẫu (bài viết, trang, CPTs).
+o	Sử dụng One Click Demo Import plugin để đóng gói dữ liệu demo.
+•	Kiểm tra ThemeCheck: Chạy theme qua plugin Theme Check để đảm bảo tuân thủ tiêu chuẩn mã hóa của Envato.
+•	Tài liệu (Documentation): Viết hướng dẫn chi tiết (cài đặt, sử dụng demo, tùy chỉnh các CPTs/Customizer).
+•	Tối ưu hóa Tốc độ: Nén CSS/JS, tối ưu hóa các ảnh mặc định trong demo.
+ 
+Tiêu chuẩn
+1.	3 biến thể 
+a.	3 header
+b.	3 footer
+c.	3 hero
+2.	Custom màu sắc
+3.	Các trang cần có
+a.	About us
+b.	Contact
+c.	Product list
+d.	Category list
+e.	Product detail
+f.	Category detail
+g.	News
+h.	News details
+i.	404
+j.	preloading
+4.	Animation, preloading
+5.	Tích hợp wordpress
+a.	Chuẩn seo
+b.	Package theme zip
+
+
