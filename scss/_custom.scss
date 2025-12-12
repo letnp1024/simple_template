@@ -6,6 +6,36 @@
 //   OPTION 1: 
 // - IMPORT BOOTSTRAP ( The entire bootstrap with everything)
 // ##########################################
+// @media (min-width: 1200px) {
+//     .container {
+//         width: 1170px;
+//     }
+// }
+// @media (min-width: 992px) {
+//     .container {
+//         width: 970px;
+//     }
+// }
+// @media (min-width: 768px) {
+//     .container {
+//         width: 750px;
+//     }
+// }
+// .container {
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 970px,
+  xxl: 1170px
+) !default;
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 // ##########################################
