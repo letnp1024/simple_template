@@ -47,25 +47,110 @@
     <div class="hero__overlay"></div>
 
     <!-- Nav on top of hero -->
-    <nav class="navbar navbar-expand-lg hero__navbar">
+    <div class="main-navbar">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">BrandName</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
+        <div class="main-navbar-inner">
+          <nav class="navbar navbar-expand-lg">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <a href="#hero">
+                <img src="images/logo.png" alt="BrandName" />
+              </a>
+            </div>
+
+            <!-- Menu -->
+            <div class="navbar-collapse" id="mainNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#hero">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#team">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#careers">Careers</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#services">Services</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-1">Service 1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-2">Service 2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-3">Service 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#news">News</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#press">Press Release</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Section (Auth & Widget) -->
+            <div class="navbar-right">
+              <div class="navbar-right__auth">
+                <a href="#login">Login</a>
+                <a href="#register">Register</a>
+              </div>
+              <div class="navbar-right__widget">
+                <ul>
+                  <li>
+                    <a href="#search">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#cart">
+                      <i class="fa-solid fa-shopping-cart"></i>
+                      <span class="tip">3</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#wishlist">
+                      <i class="fa-solid fa-heart"></i>
+                      <span class="tip">2</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
         </div>
       </div>
-    </nav>
+      <div class="main-navbar-backdrop"></div>
+    </div>
 
     <!-- Slider -->
     <div class="hero__swiper swiper">

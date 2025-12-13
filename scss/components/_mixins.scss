@@ -2,7 +2,11 @@
 
 // GRADIENT MIXIN 
 
-
+@mixin glassmorphic($bg-opacity: 0.75, $blur: 10px, $bg-color: $white) {
+    background-color: rgba($bg-color, $bg-opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+  }
 // ABSOLUTE CENTER 
 
 // TRANSITION PROPERTY 

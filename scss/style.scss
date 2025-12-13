@@ -9,8 +9,8 @@
 @use 'components/typography';
 
 // IMPORT THE SECTIONS 
+@use 'sections/main-navbar';
 @use 'sections/hero';
-@use 'sections/info-row';
 
 // FONT AWESOME (after uses to avoid @use ordering errors)
 @import 'fa';
