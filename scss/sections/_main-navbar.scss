@@ -7,7 +7,7 @@
     top: $info-row-height;
     left: 0;
     right: 0;   
-    z-index: $z-header; // 100 - cao hơn info-row (21) để luôn nằm trên
+    z-index: 20; // 100 - cao hơn info-row (21) để luôn nằm trên
     padding: 0;
     margin-top: 0;
     background-color: transparent;
