@@ -181,8 +181,6 @@
 
     .swiper-slide {
       position: relative;
-      display: flex;
-      align-items: center;
       min-height: 100vh;
       overflow: hidden;
 
@@ -197,9 +195,15 @@
         will-change: transform, opacity;
       }
 
-            .hero__content {
-              position: relative;
-              z-index: 2; // keep above overlay & backgrounds
+      .hero__container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 2; // keep above overlay & backgrounds
         max-width: 640px;
         padding: $space-2xl $space-lg;
 
