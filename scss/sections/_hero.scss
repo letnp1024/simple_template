@@ -177,6 +177,7 @@
     z-index: 1; // backgrounds sit behind overlay
     height: 100%;
     min-height: 100vh;
+    perspective: 1400px; // ensure 3D cube effect is visible
 
     .swiper-slide {
       position: relative;

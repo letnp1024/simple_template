@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.hero__pagination',
         clickable: true,
       },
-      effect: 'slide',
+      effect: 'cube',
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 40,
+        shadowScale: 0.94,
+      },
       grabCursor: true,
       on: {
         init: () => {
