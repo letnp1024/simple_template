@@ -189,8 +189,10 @@
         inset: 0;
         background-size: cover;
         background-position: center;
-        animation: hero-bg-blur 12s ease-in-out infinite;
+        animation: hero-bg-pan 12s ease-in-out infinite;
         opacity: 0;
+        transform: translate3d(0, 0, 0);
+        will-change: transform, opacity;
 
         &.is-top {
           animation-delay: 6s;
@@ -251,23 +253,23 @@
     }
   }
 
-// Blur in 3s, hold 6s, blur out 3s (total 12s)
-@keyframes hero-bg-blur {
+// Pan/slide: 3s vào, 6s giữ, 3s ra (total 12s)
+@keyframes hero-bg-pan {
   0% {
-    filter: blur(16px);
     opacity: 0;
+    transform: translate3d(-16px, 0, 0) scale(1.02);
   }
-  30% { // ~3.6s
-    filter: blur(0);
+  25% { // ~3s
     opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  70% { // hold ~6.6s
-    filter: blur(0);
+  75% { // hold ~6s
     opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  100% { // last 3s blur out
-    filter: blur(16px);
+  100% { // last ~3s
     opacity: 0;
+    transform: translate3d(16px, 0, 0) scale(1.02);
   }
 }
 

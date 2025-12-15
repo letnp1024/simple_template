@@ -12781,8 +12781,10 @@ textarea.form-control-lg {
   inset: 0;
   background-size: cover;
   background-position: center;
-  animation: hero-bg-blur 12s ease-in-out infinite;
+  animation: hero-bg-pan 12s ease-in-out infinite;
   opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
 }
 .hero .hero__swiper .swiper-slide .hero__bg.is-top {
   animation-delay: 6s;
@@ -12831,22 +12833,22 @@ textarea.form-control-lg {
   height: 100%;
   object-fit: cover;
 }
-@keyframes hero-bg-blur {
+@keyframes hero-bg-pan {
   0% {
-    filter: blur(16px);
     opacity: 0;
+    transform: translate3d(-16px, 0, 0) scale(1.02);
   }
-  30% {
-    filter: blur(0);
+  25% {
     opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  70% {
-    filter: blur(0);
+  75% {
     opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
   100% {
-    filter: blur(16px);
     opacity: 0;
+    transform: translate3d(16px, 0, 0) scale(1.02);
   }
 }
 .hero .hero__pagination {
