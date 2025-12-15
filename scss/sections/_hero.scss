@@ -37,6 +37,123 @@
       opacity: 0.9;
     }
   }
+
+  // Desktop view - show all items
+  .info-row__desktop {
+    display: flex;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  // Mobile view - dropdown
+  .info-row__mobile {
+    display: none;
+
+    @media (max-width: 767px) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .info-row__dropdown {
+    position: relative;
+    width: 100%;
+
+    &-toggle {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $color-neutral;
+      transition: $transition-base;
+
+      .info-row__item {
+        flex: 1;
+        padding: $space-xs 0;
+      }
+
+      .info-row__dropdown-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-secondary;
+        font-size: 14px;
+        margin-left: $space-sm;
+        transition: transform $transition-base;
+        flex-shrink: 0;
+      }
+
+      &[aria-expanded="true"] {
+        .info-row__dropdown-arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-menu {
+      position: absolute;
+      top: $info-row-height - 8px;
+      left: 0;
+      right: 0;
+      background-color: rgba($color-primary, 0.65);
+      backdrop-filter: blur(2px);
+      list-style: none;
+      margin: 0;
+      padding: $space-xs 0;
+      border-radius: 0 0 $radius-md $radius-md;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity $transition-base, visibility $transition-base, transform $transition-base;
+      z-index: 22;
+      max-height: 0;
+      overflow: hidden;
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        max-height: 500px;
+      }
+    }
+
+    &-item {
+      padding: 0;
+      margin: 0;
+
+      .info-row__item {
+        padding: $space-sm $space-md;
+        border-bottom: 1px solid rgba($color-neutral, 0.1);
+        transition: background-color $transition-fast;
+        cursor: default;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: rgba($color-secondary, 0.1);
+        }
+      }
+
+      &:last-child .info-row__item {
+        border-bottom: none;
+        border-radius: 0 0 $radius-md $radius-md;
+      }
+    }
+  }
 }
 
 .hero {
@@ -45,18 +162,18 @@
   min-height: 100vh;
   color: $color-neutral;
   overflow: hidden;
-  background-color: $color-primary;
+  background-color: $color-bg;
 
   .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba($color-primary, 0.8) 0%, rgba($color-primary, 0.35) 50%, rgba($color-primary, 0.1) 100%);
+    background: linear-gradient(90deg, rgba($color-bg, 0.8) 0%, rgba($color-bg, 0.35) 50%, rgba($color-bg, 0.1) 100%);
     z-index: 1;
   }
 
   .hero__swiper {
     position: relative;
-    z-index: 1;
+    z-index: 1; // backgrounds sit behind overlay
     height: 100%;
     min-height: 100vh;
 
@@ -72,17 +189,17 @@
         inset: 0;
         background-size: cover;
         background-position: center;
+        animation: hero-bg-blur 12s ease-in-out infinite;
         opacity: 0;
-        animation: hero-fade 12s ease-in-out infinite;
 
         &.is-top {
           animation-delay: 6s;
         }
       }
 
-      .hero__content {
-        position: relative;
-        z-index: 2;
+            .hero__content {
+              position: relative;
+              z-index: 2; // keep above overlay & backgrounds
         max-width: 640px;
         padding: $space-2xl $space-lg;
 
@@ -133,6 +250,26 @@
       }
     }
   }
+
+// Blur in 3s, hold 6s, blur out 3s (total 12s)
+@keyframes hero-bg-blur {
+  0% {
+    filter: blur(16px);
+    opacity: 0;
+  }
+  30% { // ~3.6s
+    filter: blur(0);
+    opacity: 1;
+  }
+  70% { // hold ~6.6s
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% { // last 3s blur out
+    filter: blur(16px);
+    opacity: 0;
+  }
+}
 
   .hero__pagination {
     position: absolute;

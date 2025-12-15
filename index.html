@@ -20,7 +20,8 @@
     <!-- Info Row overlay -->
     <div class="info-row">
       <div class="container">
-        <div class="row gy-2">
+        <!-- Desktop: Show all items in row -->
+        <div class="row gy-2 info-row__desktop">
           <div class="col-md-4">
             <div class="info-row__item">
               <span class="info-row__icon"><i class="fa-solid fa-phone"></i></span>
@@ -38,6 +39,33 @@
               <span class="info-row__icon"><i class="fa-solid fa-location-dot"></i></span>
               <div class="info-row__value">123 Business Street</div>
             </div>
+          </div>
+        </div>
+
+        <!-- Mobile: Dropdown list -->
+        <div class="info-row__mobile">
+          <div class="info-row__dropdown">
+            <button class="info-row__dropdown-toggle" type="button" aria-expanded="false">
+              <div class="info-row__item">
+                <span class="info-row__icon"><i class="fa-solid fa-phone"></i></span>
+                <div class="info-row__value">+84 123 456 789</div>
+              </div>
+              <span class="info-row__dropdown-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <ul class="info-row__dropdown-menu">
+              <li class="info-row__dropdown-item">
+                <div class="info-row__item">
+                  <span class="info-row__icon"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="info-row__value">hello@company.com</div>
+                </div>
+              </li>
+              <li class="info-row__dropdown-item">
+                <div class="info-row__item">
+                  <span class="info-row__icon"><i class="fa-solid fa-location-dot"></i></span>
+                  <div class="info-row__value">123 Business Street</div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

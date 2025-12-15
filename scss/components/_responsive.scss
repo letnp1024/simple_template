@@ -227,6 +227,25 @@
           font-size: 12px;
         }
       }
+
+      .info-row__dropdown {
+        &-toggle {
+          .info-row__item {
+            padding: $space-xs 0;
+          }
+
+          .info-row__dropdown-arrow {
+            font-size: 11px;
+          }
+        }
+
+        &-item {
+          .info-row__item {
+            padding: $space-xs $space-sm;
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
   }
 
