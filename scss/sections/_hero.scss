@@ -168,6 +168,7 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, rgba($color-bg, 0.8) 0%, rgba($color-bg, 0.35) 50%, rgba($color-bg, 0.1) 100%);
+    backdrop-filter: blur(1px);
     z-index: 1;
   }
 
@@ -193,10 +194,6 @@
         opacity: 0;
         transform: translate3d(0, 0, 0);
         will-change: transform, opacity;
-
-        &.is-top {
-          animation-delay: 6s;
-        }
       }
 
             .hero__content {
@@ -227,6 +224,7 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(90deg, rgba($color-primary, 0.85) 0%, rgba($color-primary, 0.4) 60%, rgba($color-primary, 0) 100%);
+        backdrop-filter: blur(1px);
         z-index: 1;
       }
     }

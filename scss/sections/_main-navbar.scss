@@ -41,7 +41,7 @@
     }
 
     .navbar {
-      padding: 0;
+      padding: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -55,7 +55,7 @@
     }
 
     .navbar-brand {
-      padding: 26px 0;
+      padding: 26px;
       display: inline-block;
       flex-shrink: 0;
       font-size: 1.5rem;

@@ -12262,7 +12262,7 @@ textarea.form-control-lg {
   }
 }
 .main-navbar .navbar {
-  padding: 0;
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12276,7 +12276,7 @@ textarea.form-control-lg {
   }
 }
 .main-navbar .navbar-brand {
-  padding: 26px 0;
+  padding: 26px;
   display: inline-block;
   flex-shrink: 0;
   font-size: 1.5rem;
@@ -12770,6 +12770,7 @@ textarea.form-control-lg {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 8, 20, 0.8) 0%, rgba(0, 8, 20, 0.35) 50%, rgba(0, 8, 20, 0.1) 100%);
+  backdrop-filter: blur(1px);
   z-index: 1;
 }
 .hero .hero__swiper {
@@ -12795,9 +12796,6 @@ textarea.form-control-lg {
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
 }
-.hero .hero__swiper .swiper-slide .hero__bg.is-top {
-  animation-delay: 6s;
-}
 .hero .hero__swiper .swiper-slide .hero__content {
   position: relative;
   z-index: 2;
@@ -12822,6 +12820,7 @@ textarea.form-control-lg {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(0, 29, 61, 0.85) 0%, rgba(0, 29, 61, 0.4) 60%, rgba(0, 29, 61, 0) 100%);
+  backdrop-filter: blur(1px);
   z-index: 1;
 }
 .hero .hero__swiper .hero__avatars {
