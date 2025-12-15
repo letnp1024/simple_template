@@ -7,7 +7,7 @@
     top: $info-row-height;
     left: 0;
     right: 0;   
-    z-index: 20; // 100 - cao hơn info-row (21) để luôn nằm trên
+    z-index: 5; // 100 - cao hơn info-row (21) để luôn nằm trên
     padding: 0;
     margin-top: 0;
     background-color: transparent;
@@ -400,10 +400,13 @@
     }
 
     .navbar-toggler {
+      margin-top: $info-row-height;
+      z-index: calc($z-header + 100);
       border: none;
       padding: 0.5rem;
       border-radius: $radius-md;
-      background-color: rgba($color-primary, 0.1);
+      background-color: rgba($color-neutral, 0.3);
+      backdrop-filter: blur(20px);
       display: none;
 
       &:focus {
@@ -415,7 +418,7 @@
         position: fixed;
         top: 1rem;
         right: 1rem;
-        z-index: 10000;
+        
       }
 
       .navbar-toggler-icon {
@@ -435,7 +438,7 @@
         height: 100vh;
         background: rgba($color-bg, 0.5);
         -webkit-backdrop-filter: blur(2px);
-        z-index: calc($z-header + 50) !important; // 150 - dưới navbar-collapse nhưng trên các phần tử khác
+        z-index: 11 !important; // 150 - dưới navbar-collapse nhưng trên các phần tử khác
         opacity: 0;
         visibility: visible;
         transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;

@@ -12231,7 +12231,7 @@ textarea.form-control-lg {
   top: 50px;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 5;
   padding: 0;
   margin-top: 0;
   background-color: transparent;
@@ -12575,10 +12575,13 @@ textarea.form-control-lg {
   justify-content: center;
 }
 .main-navbar .navbar-toggler {
+  margin-top: 50px;
+  z-index: 200;
   border: none;
   padding: 0.5rem;
   border-radius: 10px;
-  background-color: rgba(0, 29, 61, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
   display: none;
 }
 .main-navbar .navbar-toggler:focus {
@@ -12590,7 +12593,6 @@ textarea.form-control-lg {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 10000;
   }
 }
 .main-navbar .navbar-toggler .navbar-toggler-icon {
@@ -12608,7 +12610,7 @@ textarea.form-control-lg {
     height: 100vh;
     background: rgba(0, 8, 20, 0.5);
     -webkit-backdrop-filter: blur(2px);
-    z-index: 150 !important;
+    z-index: 11 !important;
     opacity: 0;
     visibility: visible;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -12627,7 +12629,7 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 21;
+  z-index: 10;
   height: 50px;
   background-color: rgba(0, 29, 61, 0.65);
   color: #ffffff;
