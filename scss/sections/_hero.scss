@@ -6,7 +6,6 @@
   left: 0;
   right: 0;
   z-index: 10;
-  height: $info-row-height;
   background-color: rgba($color-primary, 0.65);
   color: $color-neutral;
   padding: $space-sm 0;
@@ -41,6 +40,40 @@
   // Desktop view - show all items
   .info-row__desktop {
     display: flex;
+    width: 100%;
+    align-items: center;
+
+    // Use full-width row with 3 columns: left, center, right
+    > .col-md-4 {
+      display: flex;
+
+      &:first-child {
+        justify-content: flex-start;
+
+        .info-row__item {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+
+      &:nth-child(2) {
+        justify-content: center;
+
+        .info-row__item {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &:last-child {
+        justify-content: flex-end;
+
+        .info-row__item {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+    }
 
     @media (max-width: 767px) {
       display: none;

@@ -12662,7 +12662,6 @@ textarea.form-control-lg {
   left: 0;
   right: 0;
   z-index: 10;
-  height: 50px;
   background-color: rgba(0, 29, 61, 0.65);
   color: #ffffff;
   padding: 12px 0;
@@ -12692,6 +12691,32 @@ textarea.form-control-lg {
 }
 .info-row .info-row__desktop {
   display: flex;
+  width: 100%;
+  align-items: center;
+}
+.info-row .info-row__desktop > .col-md-4 {
+  display: flex;
+}
+.info-row .info-row__desktop > .col-md-4:first-child {
+  justify-content: flex-start;
+}
+.info-row .info-row__desktop > .col-md-4:first-child .info-row__item {
+  margin-left: 0;
+  margin-right: auto;
+}
+.info-row .info-row__desktop > .col-md-4:nth-child(2) {
+  justify-content: center;
+}
+.info-row .info-row__desktop > .col-md-4:nth-child(2) .info-row__item {
+  margin-left: auto;
+  margin-right: auto;
+}
+.info-row .info-row__desktop > .col-md-4:last-child {
+  justify-content: flex-end;
+}
+.info-row .info-row__desktop > .col-md-4:last-child .info-row__item {
+  margin-left: auto;
+  margin-right: 0;
 }
 @media (max-width: 767px) {
   .info-row .info-row__desktop {
