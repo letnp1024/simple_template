@@ -13,8 +13,23 @@
 
   <!-- Main style (compiled from scss/style.scss) -->
   <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
+ </head>
+ <body>
+  <!-- Global search overlay -->
+  <div class="search-model" style="display: none;">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+      <div class="search-close-switch">+</div>
+      <form class="search-model-form" role="search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm tại đây..."
+          autocomplete="off"
+        />
+      </form>
+    </div>
+  </div>
+
   <!-- Hero -->
   <section id="hero" class="hero">
     <!-- Info Row overlay -->
@@ -141,17 +156,18 @@
             </div>
 
             <!-- Right Section (Auth & Widget) -->
-            <div class="navbar-right">
-              <div class="navbar-right__widget">
-                <ul>
-                  <li>
-                    <a href="#search">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                  </li>
-                </ul>
+              <div class="navbar-right">
+                <div class="navbar-right__widget">
+                  <ul>
+                    <li class="navbar-search">
+                      <a href="#search" class="navbar-search__icon search-switch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </a>
+                      <span class="navbar-search__label search-switch">Search</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
             <!-- Mobile Toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"

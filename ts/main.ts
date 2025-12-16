@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.querySelector('.hero') as HTMLElement | null;
   const swiperEl = document.querySelector('.hero__swiper') as HTMLElement | null;
   const mainNavbar = document.querySelector('.main-navbar') as HTMLElement | null;
+  const searchModel = document.querySelector('.search-model') as HTMLElement | null;
+  const searchClose =
+    document.querySelector('.search-close-switch') as HTMLElement | null;
+  const searchInput = document.querySelector('#search-input') as
+    | HTMLInputElement
+    | null;
 
   // Initialize Swiper
   if (hero && swiperEl && typeof Swiper !== 'undefined') {
@@ -85,6 +91,35 @@ document.addEventListener('DOMContentLoaded', () => {
         infoRowMenu.classList.remove('show');
       }
     });
+  }
+
+  // Search Switch (TypeScript version of the jQuery snippet)
+  if (searchModel) {
+    const searchSwitches = document.querySelectorAll<HTMLElement>('.search-switch');
+
+    // Open search model
+    searchSwitches.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Show model – CSS can handle fade via transitions on a class
+        searchModel.classList.add('is-open');
+        searchModel.style.display = 'block';
+      });
+    });
+
+    // Close search model
+    if (searchClose) {
+      searchClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Hide model – again, CSS can add smooth fade
+        searchModel.classList.remove('is-open');
+        searchModel.style.display = 'none';
+
+        if (searchInput) {
+          searchInput.value = '';
+        }
+      });
+    }
   }
 });
 
