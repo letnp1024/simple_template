@@ -1,3 +1,31 @@
 @use '../custom' as *;
-@use '../components/mixins' as *;
+@use 'mixins' as *;
+@use '../variables' as *;
 
+// Highlight button used in hero (Explore services, Talk to us, ...)
+.btn-highlight {
+  @extend .btn !optional;
+  background-color: $color-secondary;
+  color: $color-text;
+  font-weight: 700;
+  border-radius: $radius-md;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: $shadow-sm;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-secondary, 6%);
+    color: $color-text;
+    box-shadow: $shadow-md;
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  }
+}
