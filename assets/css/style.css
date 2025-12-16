@@ -12280,7 +12280,8 @@ textarea.form-control-lg {
 }
 .main-navbar-inner {
   background: transparent;
-  border-radius: 10px;
+  border-radius: 0px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
   padding: 0;
   transition: 250ms ease;
   width: 100%;
@@ -12289,12 +12290,11 @@ textarea.form-control-lg {
 }
 @media (max-width: 991px) {
   .main-navbar-inner {
-    border-radius: 16px;
     padding: 0;
   }
 }
 .main-navbar .navbar {
-  padding: 8px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12308,7 +12308,7 @@ textarea.form-control-lg {
   }
 }
 .main-navbar .navbar-brand {
-  padding: 26px;
+  padding: 0px;
   display: inline-block;
   flex-shrink: 0;
   font-size: 1.5rem;

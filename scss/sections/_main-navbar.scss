@@ -27,7 +27,8 @@
 
     &-inner {
       background: transparent;
-      border-radius: $radius-md;
+      border-radius: 0px;
+      border-bottom: 0.5px solid rgba($color-neutral, 0.1);
       padding: 0;
       transition: $transition-base;
       width: 100%;
@@ -35,13 +36,12 @@
       z-index: 1;
       
       @media (max-width: 991px) {
-        border-radius: $radius-lg;
         padding: 0;
       }
     }
 
     .navbar {
-      padding: 8px;
+      padding: 0px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -55,7 +55,7 @@
     }
 
     .navbar-brand {
-      padding: 26px;
+      padding: 0px;
       display: inline-block;
       flex-shrink: 0;
       font-size: 1.5rem;
