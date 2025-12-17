@@ -12606,6 +12606,10 @@ textarea.form-control-lg {
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__icon:hover {
   color: #ffc300;
 }
+.main-navbar .navbar-right__widget .navbar-search.is-scrolled {
+  color: #000814;
+  border-bottom-color: #000814;
+}
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__label {
   font-size: 13px;
   color: #ffffff;
@@ -13025,7 +13029,7 @@ textarea.form-control-lg {
   min-height: 500px;
   max-height: 800px;
   overflow: hidden;
-  background-color: #000814;
+  background-color: #ffffff;
 }
 #about-us .about-wrapper {
   position: relative;
@@ -13073,11 +13077,12 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 #about-us .about-slide .about-content {
+  width: 585px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px;
-  background-color: #ffffff;
+  padding-left: 48px;
+  background-color: transparent;
   height: 100%;
 }
 #about-us .about-slide .about-content h2 {

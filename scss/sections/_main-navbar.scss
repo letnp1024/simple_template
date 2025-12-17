@@ -399,6 +399,10 @@
             color: $color-secondary;
           }
         }
+        &.is-scrolled {
+          color: $color-text;
+          border-bottom-color: $color-text;
+        }
 
         .navbar-search__label {
           font-size: 13px;

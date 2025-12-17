@@ -48,6 +48,26 @@ $z-header: 100;
 $z-overlay: 900;
 $z-modal: 1000;
 
+// Content / container widths (aligned with Bootstrap overrides in _custom.scss)
+// Use these to clamp text/content width in sections (hero, about-us, etc.)
+$content-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 970px,
+  xxl: 1170px
+);
+$content-max-semi-widths: (
+  sm: 270px,
+  md: 360px,
+  lg: 480px,
+  xl: 585px,
+  xxl: 685px
+);
+
+// A convenient default max-width for main content on large screens
+$content-max-width: 970px;
+
 // Transition
 $transition-fast: 150ms ease-out;
 $transition-base: 250ms ease;
