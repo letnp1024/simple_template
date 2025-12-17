@@ -223,13 +223,35 @@
       }
     }
 
-    // When navbar is scrolled, change link colors
+    // When navbar is scrolled, change link + search colors
     &.is-scrolled {
       .nav-link {
         color: $color-text;
 
         &:hover {
           color: $color-primary;
+        }
+      }
+
+      .navbar-right__widget {
+        .navbar-search {
+          // Group icon + label to share same color when scrolled
+          .navbar-search__icon,
+          .navbar-search__label {
+            color: $color-text;
+
+            &:hover {
+              color: $color-secondary;
+            }
+          }
+
+          .navbar-search__label {
+            border-bottom-color: rgba($color-text, 0.85);
+
+            &:hover {
+              border-bottom-color: $color-secondary;
+            }
+          }
         }
       }
     }
@@ -399,10 +421,7 @@
             color: $color-secondary;
           }
         }
-        &.is-scrolled {
-          color: $color-text;
-          border-bottom-color: $color-text;
-        }
+
 
         .navbar-search__label {
           font-size: 13px;

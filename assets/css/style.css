@@ -12463,6 +12463,20 @@ textarea.form-control-lg {
 .main-navbar.is-scrolled .nav-link:hover {
   color: #001d3d;
 }
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon,
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
+  color: #000814;
+}
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon:hover,
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
+  color: #ffc300;
+}
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
+  border-bottom-color: rgba(0, 8, 20, 0.85);
+}
+.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
+  border-bottom-color: #ffc300;
+}
 .main-navbar .dropdown {
   position: absolute;
   left: 0;
@@ -12605,10 +12619,6 @@ textarea.form-control-lg {
 }
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__icon:hover {
   color: #ffc300;
-}
-.main-navbar .navbar-right__widget .navbar-search.is-scrolled {
-  color: #000814;
-  border-bottom-color: #000814;
 }
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__label {
   font-size: 13px;
