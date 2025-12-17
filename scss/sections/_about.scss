@@ -1,0 +1,193 @@
+@use '../variables' as *;
+
+// About Us Section - Canva-style slide experience
+#about-us {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 800px;
+  overflow: hidden;
+  background-color: $color-bg;
+
+  // Wrapper acts as the frame container
+  .about-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Each slide is absolutely positioned and layered
+  .about-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+    z-index: 1;
+
+    // Active slide is visible
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    // Row container for 2-column layout
+    .row {
+      height: 120%;
+      margin: 0;
+    }
+
+    // Image column (left on desktop, top on mobile)
+    .about-image {
+      position: relative;
+      height: 100%;
+      padding: 0;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      // Parallax container for image movement
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+    }
+
+    // Content column (right on desktop, bottom on mobile)
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: $space-2xl;
+      background-color: $color-neutral;
+      height: 100%;
+
+      h2 {
+        font-size: $font-size-h2;
+        font-weight: $font-weight-bold;
+        color: $color-text;
+        margin-bottom: $space-lg;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: $font-size-body;
+        line-height: $line-height-base;
+        color: $color-text;
+        margin-bottom: $space-xl;
+        opacity: 0.9;
+      }
+
+      .btn {
+        align-self: flex-start;
+        margin-top: $space-md;
+      }
+    }
+  }
+
+  // Navigation buttons
+  .about-nav {
+    position: absolute;
+    bottom: $space-xl;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: $space-md;
+    z-index: 10;
+
+    button {
+      width: 50px;
+      height: 50px;
+      border: 2px solid $color-neutral;
+      background-color: rgba($color-neutral, 0.9);
+      color: $color-text;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-neutral;
+        border-color: $color-primary;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Responsive: Mobile layout
+  @media (max-width: 991px) {
+    height: auto;
+    min-height: 100vh;
+
+    .about-slide {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      min-height: 100vh;
+
+      // Remove active state behavior on mobile
+      &.active {
+        position: relative;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+
+      .about-image {
+        height: 50vh;
+        min-height: 300px;
+      }
+
+      .about-content {
+        padding: $space-xl $space-lg;
+        min-height: 50vh;
+      }
+    }
+
+    .about-nav {
+      position: fixed;
+      bottom: $space-lg;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  // Tablet adjustments
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .about-content {
+      padding: $space-xl;
+    }
+  }
+}
+

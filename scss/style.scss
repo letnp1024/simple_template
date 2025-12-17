@@ -12,6 +12,7 @@
 // IMPORT THE SECTIONS 
 @use 'sections/main-navbar';
 @use 'sections/hero';
+@use 'sections/about';
 
 // FONT AWESOME (after uses to avoid @use ordering errors)
 @import 'fa';
