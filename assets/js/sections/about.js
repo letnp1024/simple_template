@@ -33,10 +33,23 @@ export function initAboutSection() {
     // Animate slide in
     const animateSlideIn = (slide) => {
         const image = slide.querySelector('.about-image img');
+        const heading = slide.querySelector('.about-content h2');
+        const paragraph = slide.querySelector('.about-content p');
+        const button = slide.querySelector('.about-content .btn');
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
         // Image: left to right with fade
         if (image) {
             tl.fromTo(image, { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2 }, 0);
+        }
+        // Content: slide in from the right with fade, staggered
+        if (heading) {
+            tl.fromTo(heading, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7 }, 0.3);
+        }
+        if (paragraph) {
+            tl.fromTo(paragraph, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7 }, 0.45);
+        }
+        if (button) {
+            tl.fromTo(button, { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7 }, 0.6);
         }
     };
     // Animate slide out
