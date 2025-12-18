@@ -315,30 +315,43 @@
       height: 50%;
       padding: $space-xl $space-lg;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: flex-start;
     }
 
-    // Header row: label (title) left, icon right
+    // Head: title left, icon right – đảm bảo nằm cùng một hàng
+    .service-card__head {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: $space-sm;
+      margin-bottom: $space-sm; // khoảng cách nhỏ với content bên dưới
+      flex-wrap: nowrap;
+    }
+
     .service-card__title {
       order: 1;
       margin-bottom: 0;
+      flex: 1 1 auto;
     }
 
     .service-card__icon {
-      order: 1;
-      margin-left: auto;
+      order: 2;
+      margin-left: $space-md;
       margin-bottom: 0;
+      flex: 0 0 auto;
     }
 
     .service-card__description {
-      order: 2;
+      order: 3;
       width: 100%;
-      margin-top: $space-lg;
+      margin-top: $space-xs; // nhỏ hơn hiện tại
     }
 
     .service-card__button {
-      order: 3;
+      order: 4;
       margin-top: $space-md;
     }
 
@@ -412,33 +425,46 @@
       height: 50%;
       padding: $space-xl $space-lg;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: flex-start;
     }
 
-    // Header row: label (title) left, icon right
+    // Head: title left, icon right – đảm bảo nằm cùng một hàng
+    .service-card__head {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: $space-sm;
+      margin-bottom: $space-sm; // khoảng cách nhỏ với content bên dưới
+      flex-wrap: nowrap;
+    }
+
     .service-card__title {
       font-size: $font-size-h3;
       order: 1;
       margin-bottom: 0;
+      flex: 1 1 auto;
     }
 
     .service-card__icon {
       font-size: 36px;
-      order: 1;
-      margin-left: auto;
+      order: 2;
+      margin-left: $space-md;
       margin-bottom: 0;
+      flex: 0 0 auto;
     }
 
     .service-card__description {
       font-size: $font-size-body;
-      order: 2;
+      order: 3;
       width: 100%;
-      margin-top: $space-lg;
+      margin-top: $space-xs; // nhỏ hơn hiện tại
     }
 
     .service-card__button {
-      order: 3;
+      order: 4;
       margin-top: $space-md;
     }
 
