@@ -22,7 +22,7 @@ export function initServicesSection() {
     BACKGROUND: 500, // Distance from main card to background cards (outer left/outer right)
   };
 
-  let currentIndex = 0;
+  let currentIndex = 2; // Start with card 3 (index 2)
   const totalCards = serviceCards.length;
   const isMobile = window.innerWidth < 992;
   let isAnimating = false;

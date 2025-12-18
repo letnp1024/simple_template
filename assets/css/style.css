@@ -13354,7 +13354,7 @@ textarea.form-control-lg {
   transform: translateY(20px);
 }
 #services .service-card__title {
-  font-size: 34pt;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #000814;
   margin-bottom: 24px;
@@ -13363,7 +13363,7 @@ textarea.form-control-lg {
   transform: translateY(20px);
 }
 #services .service-card__description {
-  font-size: 21pt;
+  font-size: 1rem;
   line-height: 1.6;
   color: #000814;
   opacity: 0.8;
