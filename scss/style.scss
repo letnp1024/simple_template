@@ -13,6 +13,7 @@
 @use 'sections/main-navbar';
 @use 'sections/hero';
 @use 'sections/about';
+@use 'sections/services';
 
 // FONT AWESOME (after uses to avoid @use ordering errors)
 @import 'fa';

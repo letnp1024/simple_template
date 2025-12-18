@@ -296,41 +296,128 @@
     </div>
   </section>
 
-  <!-- Services / Products -->
-  <section id="services" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-light">Products & Services</h2>
-        <p class="text-muted">Highlight your core offerings</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
-            <div class="d-flex align-items-center gap-2 mb-3">
-              <span class="text-secondary"><i class="fa-solid fa-briefcase fa-lg"></i></span>
-              <h5 class="mb-0">Consulting</h5>
+  <!-- Services - Premium Multi-Card Slider -->
+  <section id="services" class="services">
+    <div class="services__container">
+      <!-- Label -->
+      <div class="services__label">OUR SERVICES</div>
+
+      <!-- Card Slider -->
+      <div class="services__slider">
+        <div class="services__track">
+          <!-- Service Card 1 -->
+          <div class="service-card" data-index="0">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-01.jpg" alt="Product Strategy">
+              </div>
+              <div class="service-card__label">Product Strategy</div>
             </div>
-            <p class="text-muted mb-0">Business consulting with measurable outcomes and clear roadmaps.</p>
+            <div class="service-card__right">
+              <div class="service-card__icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3 class="service-card__title">Product Strategy</h3>
+              <p class="service-card__description">
+                Transform your vision into a clear roadmap. We help you define product goals, 
+                prioritize features, and build a strategy that aligns with your business objectives.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card" data-index="1">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-02.jpg" alt="UX Research">
+              </div>
+              <div class="service-card__label">UX Research</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+              <h3 class="service-card__title">UX Research</h3>
+              <p class="service-card__description">
+                Deep insights into user behavior and needs. We conduct comprehensive research 
+                to inform design decisions and create experiences that truly resonate.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card" data-index="2">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-03.jpg" alt="Design Systems">
+              </div>
+              <div class="service-card__label">Design Systems</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__icon">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <h3 class="service-card__title">Design Systems</h3>
+              <p class="service-card__description">
+                Scalable, consistent design foundations. Build comprehensive design systems 
+                that ensure quality and speed across all your digital products.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card" data-index="3">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-04.jpg" alt="Web & Mobile">
+              </div>
+              <div class="service-card__label">Web & Mobile</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3 class="service-card__title">Web & Mobile</h3>
+              <p class="service-card__description">
+                Modern, performant applications built with cutting-edge technology. 
+                From responsive web apps to native mobile experiences.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="service-card" data-index="4">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-05.jpg" alt="Cloud & DevOps">
+              </div>
+              <div class="service-card__label">Cloud & DevOps</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__icon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <h3 class="service-card__title">Cloud & DevOps</h3>
+              <p class="service-card__description">
+                Scalable infrastructure and automated workflows. Deploy faster, 
+                scale efficiently, and maintain reliability with modern DevOps practices.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
-            <div class="d-flex align-items-center gap-2 mb-3">
-              <span class="text-secondary"><i class="fa-solid fa-laptop-code fa-lg"></i></span>
-              <h5 class="mb-0">Digital Products</h5>
-            </div>
-            <p class="text-muted mb-0">SaaS and platform builds with modern stacks and scalable design.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white shadow-sm rounded-3 h-100">
-            <div class="d-flex align-items-center gap-2 mb-3">
-              <span class="text-secondary"><i class="fa-solid fa-chart-line fa-lg"></i></span>
-              <h5 class="mb-0">Growth</h5>
-            </div>
-            <p class="text-muted mb-0">Marketing, analytics, and optimization for revenue and retention.</p>
-          </div>
-        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="services__nav services__nav--prev" aria-label="Previous service">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="services__nav services__nav--next" aria-label="Next service">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
