@@ -71,9 +71,9 @@
     overflow: hidden;
     box-shadow: $shadow-md;
     cursor: pointer;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.1s ease,
-                z-index 0s linear 0.3s;
+    transition: transform 0s cubic-bezier(0, 0, 0, 0),
+                opacity 0s ease,
+                z-index 0s linear 0s;
     display: flex;
     flex-direction: row;
 
@@ -283,10 +283,15 @@
 
   // Medium screens: vertical layout + chỉ main & secondary (ẩn background)
   @media (min-width: 992px) and (max-width: 1400px) {
+    .services__label {
+        top: 120px;
+      font-size: 24px;
+    }
     .service-card {
-      width: 550px;
+      max-width: 600px;
+      min-width: 100px;
       height: auto;
-      min-height: 500px;
+      min-height: 200px;
       flex-direction: column; // top/bottom
 
       // Hide background cards, only show main + secondary
@@ -332,12 +337,14 @@
     }
 
     .service-card__title {
+      font-size: 2rem;
       order: 1;
       margin-bottom: 0;
       flex: 1 1 auto;
     }
 
     .service-card__icon {
+      font-size: 3.5rem;
       order: 2;
       margin-left: $space-md;
       margin-bottom: 0;
@@ -348,6 +355,7 @@
       order: 3;
       width: 100%;
       margin-top: $space-xs; // nhỏ hơn hiện tại
+      font-size: 1.5rem;
     }
 
     .service-card__button {
@@ -369,7 +377,6 @@
   // Small screens: Only show main card, switch to vertical layout (top/bottom)
   @media (max-width: 991px) {
     height: 100vh;
-    min-height: 100vh;
 
     .services__container {
       padding: $space-xl $space-md;
@@ -386,14 +393,13 @@
     }
 
     .service-card {
-      width: 90%;
+      width: 80%;
       max-width: 500px;
-      height: auto;
-      min-height: 500px;
+      max-height: 200px;
+      min-height: 100px;
       flex-direction: column; // Switch from row (left/right) to column (top/bottom)
 
       // On small screens, show only main card, hide secondary and background
-      &.is-secondary,
       &.is-background {
         display: none;
       }
