@@ -71,9 +71,9 @@
     overflow: hidden;
     box-shadow: $shadow-md;
     cursor: pointer;
-    transition: transform 0s cubic-bezier(0, 0, 0, 0),
-                opacity 0s ease,
-                z-index 0s linear 0s;
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.1, 0),
+                opacity 0.1s ease,
+                z-index 0s linear 0.3s;
     display: flex;
     flex-direction: row;
 
