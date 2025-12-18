@@ -13349,10 +13349,17 @@ textarea.form-control-lg {
   background-color: rgba(255, 255, 255, 0.9);
   position: relative;
 }
-#services .service-card__icon {
-  font-size: 48px;
-  color: #ffc300;
+#services .service-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 24px;
+}
+#services .service-card__icon {
+  font-size: 36px;
+  color: #ffc300;
+  margin-bottom: 0;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -13360,7 +13367,7 @@ textarea.form-control-lg {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000814;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   line-height: 1.2;
   opacity: 0;
   transform: translateY(20px);

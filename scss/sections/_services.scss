@@ -180,10 +180,19 @@
     position: relative;
   }
 
-  .service-card__icon {
-    font-size: 48px;
-    color: $color-secondary;
+  // Head row: title + icon
+  .service-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
     margin-bottom: $space-lg;
+  }
+
+  .service-card__icon {
+    font-size: 36px;
+    color: $color-secondary;
+    margin-bottom: 0;
     opacity: 0;
     transform: translateY(20px);
   }
@@ -192,7 +201,7 @@
     font-size: 1.5rem;
     font-weight: $font-weight-bold;
     color: $color-text;
-    margin-bottom: $space-lg;
+    margin-bottom: 0;
     line-height: 1.2;
     opacity: 0;
     transform: translateY(20px);
