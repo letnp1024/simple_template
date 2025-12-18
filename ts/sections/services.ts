@@ -98,9 +98,18 @@ export function initServicesSection() {
     const oldCard = serviceCards[currentIndex];
     const newCard = serviceCards[newIndex];
 
+    // Disable CSS transitions during GSAP animation to prevent conflicts
+    serviceCards.forEach((card) => {
+      card.style.transition = 'none';
+    });
+
     // Create GSAP timeline for smooth transition
     const tl = gsap.timeline({
       onComplete: () => {
+        // Re-enable CSS transitions after animation completes
+        serviceCards.forEach((card) => {
+          card.style.transition = '';
+        });
         isAnimating = false;
         updateCardStates();
       },
@@ -176,6 +185,8 @@ export function initServicesSection() {
             opacity: opacity,
             duration: 0.6,
             ease: 'power3.out',
+            immediateRender: false,
+            overwrite: true,
           },
           0, // All animations start at the same time
         );
