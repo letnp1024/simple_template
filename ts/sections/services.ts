@@ -16,6 +16,12 @@ export function initServicesSection() {
     return;
   }
 
+  // Card spacing configuration
+  const CARD_SPACING = {
+    SECONDARY: 360, // Distance from main card to secondary cards (left/right)
+    BACKGROUND: 500, // Distance from main card to background cards (outer left/outer right)
+  };
+
   let currentIndex = 0;
   const totalCards = serviceCards.length;
   const isMobile = window.innerWidth < 992;
@@ -49,25 +55,25 @@ export function initServicesSection() {
           card.classList.add('is-secondary');
           card.style.left = '50%';
           card.style.top = '50%';
-          card.style.transform = 'translate(calc(-50% - 320px), -50%) scale(0.66)';
+          card.style.transform = `translate(calc(-50% - ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
         } else if (diff === 1) {
           // Secondary card (right of main)
           card.classList.add('is-secondary');
           card.style.left = '50%';
           card.style.top = '50%';
-          card.style.transform = 'translate(calc(-50% + 320px), -50%) scale(0.66)';
+          card.style.transform = `translate(calc(-50% + ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
         } else if (diff === -2) {
           // Background card (outer left)
           card.classList.add('is-background');
           card.style.left = '50%';
           card.style.top = '50%';
-          card.style.transform = 'translate(calc(-50% - 500px), -50%) scale(0.44)';
+          card.style.transform = `translate(calc(-50% - ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
         } else if (diff === 2) {
           // Background card (outer right)
           card.classList.add('is-background');
           card.style.left = '50%';
           card.style.top = '50%';
-          card.style.transform = 'translate(calc(-50% + 500px), -50%) scale(0.44)';
+          card.style.transform = `translate(calc(-50% + ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
         } else {
           // Hidden cards (beyond visible range)
           card.classList.add('is-hidden');
@@ -138,19 +144,19 @@ export function initServicesSection() {
           opacity = 1;
         } else if (newDiff === -1) {
           // Secondary left
-          transform = 'translate(calc(-50% - 320px), -50%) scale(0.66)';
+          transform = `translate(calc(-50% - ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
           opacity = 0.7;
         } else if (newDiff === 1) {
           // Secondary right
-          transform = 'translate(calc(-50% + 320px), -50%) scale(0.66)';
+          transform = `translate(calc(-50% + ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
           opacity = 0.7;
         } else if (newDiff === -2) {
           // Background left
-          transform = 'translate(calc(-50% - 500px), -50%) scale(0.44)';
+          transform = `translate(calc(-50% - ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
           opacity = 0.5;
         } else if (newDiff === 2) {
           // Background right
-          transform = 'translate(calc(-50% + 500px), -50%) scale(0.44)';
+          transform = `translate(calc(-50% + ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
           opacity = 0.5;
         } else {
           // Hidden
@@ -234,8 +240,8 @@ export function initServicesSection() {
   const handleCardClick = (card: HTMLElement, index: number) => {
     if (isMobile || index === currentIndex || isAnimating) return;
 
-    // Only allow clicks on secondary cards
-    if (card.classList.contains('is-secondary')) {
+    // Allow clicks on secondary and background cards
+    if (card.classList.contains('is-secondary') || card.classList.contains('is-background')) {
       goToCard(index, index > currentIndex ? 'next' : 'prev');
     }
   };
@@ -304,7 +310,7 @@ export function initServicesSection() {
   });
 
   // Handle window resize
-  let resizeTimeout: NodeJS.Timeout;
+  let resizeTimeout: ReturnType<typeof setTimeout>;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
