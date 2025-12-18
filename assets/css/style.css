@@ -13425,6 +13425,59 @@ textarea.form-control-lg {
 #services .services__nav--next {
   right: 32px;
 }
+@media (min-width: 992px) and (max-width: 1400px) {
+  #services .service-card {
+    width: 550px;
+    height: auto;
+    min-height: 500px;
+    flex-direction: column;
+  }
+  #services .service-card.is-background {
+    display: none;
+  }
+  #services .service-card__left {
+    width: 100%;
+    height: 50%;
+  }
+  #services .service-card__image {
+    height: 80%;
+  }
+  #services .service-card__label {
+    height: 20%;
+  }
+  #services .service-card__right {
+    width: 100%;
+    height: 50%;
+    padding: 32px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  #services .service-card__title {
+    order: 1;
+    margin-bottom: 0;
+  }
+  #services .service-card__icon {
+    order: 1;
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+  #services .service-card__description {
+    order: 2;
+    width: 100%;
+    margin-top: 24px;
+  }
+  #services .service-card__button {
+    order: 3;
+    margin-top: 16px;
+  }
+  #services .services__nav--prev {
+    left: 16px;
+  }
+  #services .services__nav--next {
+    right: 16px;
+  }
+}
 @media (max-width: 991px) {
   #services {
     height: 100vh;
@@ -13470,15 +13523,30 @@ textarea.form-control-lg {
     width: 100%;
     height: 50%;
     padding: 32px 24px;
-  }
-  #services .service-card__icon {
-    font-size: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
   #services .service-card__title {
     font-size: 34pt;
+    order: 1;
+    margin-bottom: 0;
+  }
+  #services .service-card__icon {
+    font-size: 36px;
+    order: 1;
+    margin-left: auto;
+    margin-bottom: 0;
   }
   #services .service-card__description {
     font-size: 21pt;
+    order: 2;
+    width: 100%;
+    margin-top: 24px;
+  }
+  #services .service-card__button {
+    order: 3;
+    margin-top: 16px;
   }
   #services .services__nav {
     top: auto;
@@ -13492,17 +13560,6 @@ textarea.form-control-lg {
   #services .services__nav--next {
     right: auto;
     left: calc(50% + 30px);
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  #services .service-card {
-    width: 550px;
-  }
-  #services .services__nav--prev {
-    left: 16px;
-  }
-  #services .services__nav--next {
-    right: 16px;
   }
 }
 

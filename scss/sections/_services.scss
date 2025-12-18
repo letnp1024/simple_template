@@ -271,7 +271,80 @@
     }
   }
 
-  // Responsive: Mobile Layout
+
+  // Medium screens: vertical layout + chỉ main & secondary (ẩn background)
+  @media (min-width: 992px) and (max-width: 1400px) {
+    .service-card {
+      width: 550px;
+      height: auto;
+      min-height: 500px;
+      flex-direction: column; // top/bottom
+
+      // Hide background cards, only show main + secondary
+      &.is-background {
+        display: none;
+      }
+    }
+
+    // Left column becomes top section
+    .service-card__left {
+      width: 100%;
+      height: 50%;
+    }
+
+    .service-card__image {
+      height: 80%;
+    }
+
+    .service-card__label {
+      height: 20%;
+    }
+
+    // Right column becomes bottom section
+    .service-card__right {
+      width: 100%;
+      height: 50%;
+      padding: $space-xl $space-lg;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    // Header row: label (title) left, icon right
+    .service-card__title {
+      order: 1;
+      margin-bottom: 0;
+    }
+
+    .service-card__icon {
+      order: 1;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+
+    .service-card__description {
+      order: 2;
+      width: 100%;
+      margin-top: $space-lg;
+    }
+
+    .service-card__button {
+      order: 3;
+      margin-top: $space-md;
+    }
+
+    .services__nav {
+      &--prev {
+        left: $space-md;
+      }
+
+      &--next {
+        right: $space-md;
+      }
+    }
+  }
+
+  // Small screens: Only show main card, switch to vertical layout (top/bottom)
   @media (max-width: 991px) {
     height: 100vh;
     min-height: 100vh;
@@ -295,9 +368,9 @@
       max-width: 500px;
       height: auto;
       min-height: 500px;
-      flex-direction: column;
+      flex-direction: column; // Switch from row (left/right) to column (top/bottom)
 
-      // On mobile, show only main card, hide secondary and background
+      // On small screens, show only main card, hide secondary and background
       &.is-secondary,
       &.is-background {
         display: none;
@@ -310,6 +383,7 @@
       }
     }
 
+    // Left column becomes top section
     .service-card__left {
       width: 100%;
       height: 50%;
@@ -323,25 +397,43 @@
       height: 20%;
     }
 
+    // Right column becomes bottom section
     .service-card__right {
       width: 100%;
       height: 50%;
       padding: $space-xl $space-lg;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    // Header row: label (title) left, icon right
+    .service-card__title {
+      font-size: $font-size-h3;
+      order: 1;
+      margin-bottom: 0;
     }
 
     .service-card__icon {
       font-size: 36px;
-    }
-
-    .service-card__title {
-      font-size: $font-size-h3;
+      order: 1;
+      margin-left: auto;
+      margin-bottom: 0;
     }
 
     .service-card__description {
       font-size: $font-size-body;
+      order: 2;
+      width: 100%;
+      margin-top: $space-lg;
     }
 
-    // Move arrows below card on mobile
+    .service-card__button {
+      order: 3;
+      margin-top: $space-md;
+    }
+
+    // Move arrows below card on small screens
     .services__nav {
       top: auto;
       bottom: $space-lg;
@@ -355,23 +447,6 @@
       &--next {
         right: auto;
         left: calc(50% + 30px);
-      }
-    }
-  }
-
-  // Tablet adjustments
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .service-card {
-      width: 550px;
-    }
-
-    .services__nav {
-      &--prev {
-        left: $space-md;
-      }
-
-      &--next {
-        right: $space-md;
       }
     }
   }
