@@ -3,6 +3,7 @@ import { initNavbarAndInfoRow, initSearchOverlay } from './sections/navbar.js';
 import { initAboutSection } from './sections/about.js';
 import { initServicesSection } from './sections/services.js';
 import { initCategoryNewsSection } from './sections/category-news.js';
+import { initTestimonialSection } from './sections/testimonial.js';
 // Root bootstrapper – only coordinates section initialisation
 document.addEventListener('DOMContentLoaded', () => {
     initHeroSection();
@@ -11,5 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initAboutSection();
     initServicesSection();
     initCategoryNewsSection();
+    initTestimonialSection();
 });
 //# sourceMappingURL=main.js.map
