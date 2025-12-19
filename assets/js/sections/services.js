@@ -127,48 +127,95 @@ export function initServicesSection() {
                 const newDiff = index - newIndex;
                 let transform = '';
                 let opacity = 1;
+                let width = 600; // Default main card width
                 if (newDiff === 0) {
                     // New main card
                     transform = 'translate(-50%, -50%) scale(1)';
                     opacity = 1;
+                    width = 600;
                 }
                 else if (newDiff === -1) {
                     // Secondary left
                     transform = `translate(calc(-50% - ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
                     opacity = 0.7;
+                    width = 300;
                 }
                 else if (newDiff === 1) {
                     // Secondary right
                     transform = `translate(calc(-50% + ${CARD_SPACING.SECONDARY}px), -50%) scale(0.66)`;
                     opacity = 0.7;
+                    width = 300;
                 }
                 else if (newDiff === -2) {
                     // Background left
                     transform = `translate(calc(-50% - ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
                     opacity = 0.5;
+                    width = 300;
                 }
                 else if (newDiff === 2) {
                     // Background right
                     transform = `translate(calc(-50% + ${CARD_SPACING.BACKGROUND}px), -50%) scale(0.44)`;
                     opacity = 0.5;
+                    width = 300;
                 }
                 else {
                     // Hidden
                     transform = 'translate(-50%, -50%) scale(0.44)';
                     opacity = 0;
+                    width = 300;
                 }
-                targetStates.push({ card, transform, opacity });
+                targetStates.push({ card, transform, opacity, width });
             });
             // Animate all cards to their new positions simultaneously
-            targetStates.forEach(({ card, transform, opacity }) => {
+            targetStates.forEach(({ card, transform, opacity, width }) => {
+                const cardLeft = card.querySelector('.service-card__left');
+                const cardRight = card.querySelector('.service-card__right');
+                const isMain = width === 600;
                 tl.to(card, {
                     transform: transform,
                     opacity: opacity,
+                    width: `${width}px`,
                     duration: 0.6,
                     ease: 'power3.out',
                     immediateRender: false,
                     overwrite: true,
                 }, 0);
+                // Animate card-left: shrink from 100% to 50% when becoming main
+                if (cardLeft) {
+                    tl.to(cardLeft, {
+                        width: isMain ? '50%' : '100%',
+                        duration: 0.7,
+                        ease: 'expo.out',
+                    }, 0);
+                }
+                // Animate card-right width and opacity with smooth expand effect
+                if (cardRight) {
+                    // Set initial state for card-right
+                    if (isMain) {
+                        // Expanding: start from 0, grow to 50%
+                        gsap.set(cardRight, {
+                            width: '0',
+                            opacity: 0,
+                            scaleX: 0.8,
+                            padding: '0',
+                            transformOrigin: 'left center',
+                        });
+                    }
+                    else {
+                        // Collapsing: ensure padding is 0
+                        gsap.set(cardRight, {
+                            padding: '0',
+                        });
+                    }
+                    tl.to(cardRight, {
+                        width: isMain ? '50%' : '0',
+                        opacity: isMain ? 1 : 0,
+                        scaleX: isMain ? 1 : 0.8,
+                        padding: isMain ? '32px' : '0', // Animate padding to remove white space
+                        duration: 0.7,
+                        ease: 'expo.out', // Smoother easing for expand effect
+                    }, 0);
+                }
             });
         }
         // Update current index
