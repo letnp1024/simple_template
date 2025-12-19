@@ -14,6 +14,7 @@
 @use 'sections/hero';
 @use 'sections/about';
 @use 'sections/services';
+@use 'sections/category-news';
 
 // FONT AWESOME (after uses to avoid @use ordering errors)
 @import 'fa';
