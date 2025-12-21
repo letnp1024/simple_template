@@ -9,6 +9,10 @@
   "scripts": {
     "compile:sass": "sass scss:assets/css",
     "compile:sass:watch": "sass scss:assets/css --watch",
+    "compile:sass:variant": "sass scss/style-variant.scss:assets/css/style-variant.css",
+    "compile:sass:variant:watch": "sass scss/style-variant.scss:assets/css/style-variant.css --watch",
+    "compile:sass:v3": "sass scss/style-v3.scss:assets/css/style-v3.css",
+    "compile:sass:v3:watch": "sass scss/style-v3.scss:assets/css/style-v3.css --watch",
     "compile:ts": "tsc -p tsconfig.json",
     "compile:ts:watch": "tsc -p tsconfig.json --watch",
     "compile:all": "npm run compile:sass && npm run compile:ts",

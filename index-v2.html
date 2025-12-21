@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Template - Variant</title>
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendors/css/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome is bundled via SCSS with correct font paths -->
+  <link rel="stylesheet" href="assets/vendors/css/animate.css/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/css/swiper/swiper-bundle.min.css" />
+
+  <!-- V2 style (compiled from scss/style-v2.scss) -->
+  <link rel="stylesheet" href="assets/css/style-v2.css" />
+ </head>
+ <body>
+  <!-- Global search overlay -->
+  <div class="search-model" style="display: none;">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+      <div class="search-close-switch">+</div>
+      <form class="search-model-form" role="search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm tại đây..."
+          autocomplete="off"
+        />
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero V2 -->
+  <section id="hero" class="hero-v2">
+    <!-- Info Row overlay -->
+    <div class="info-row">
+      <div class="container">
+        <!-- Desktop: Show all items in row -->
+        <div class="row gy-2 info-row__desktop">
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-phone"></i></span>
+              <div class="info-row__value">+84 123 456 789</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-envelope"></i></span>
+              <div class="info-row__value">hello@company.com</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-row__item">
+              <span class="info-row__icon"><i class="fa-solid fa-location-dot"></i></span>
+              <div class="info-row__value">123 Business Street</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile: Dropdown list -->
+        <div class="info-row__mobile">
+          <div class="info-row__dropdown">
+            <button class="info-row__dropdown-toggle" type="button" aria-expanded="false">
+              <div class="info-row__item">
+                <span class="info-row__icon"><i class="fa-solid fa-phone"></i></span>
+                <div class="info-row__value">+84 123 456 789</div>
+              </div>
+              <span class="info-row__dropdown-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <ul class="info-row__dropdown-menu">
+              <li class="info-row__dropdown-item">
+                <div class="info-row__item">
+                  <span class="info-row__icon"><i class="fa-solid fa-envelope"></i></span>
+                  <div class="info-row__value">hello@company.com</div>
+                </div>
+              </li>
+              <li class="info-row__dropdown-item">
+                <div class="info-row__item">
+                  <span class="info-row__icon"><i class="fa-solid fa-location-dot"></i></span>
+                  <div class="info-row__value">123 Business Street</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav on top of hero -->
+    <div class="main-navbar">
+      <div class="container">
+        <div class="main-navbar-inner">
+          <nav class="navbar navbar-expand-lg">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <a href="#hero">
+                <img src="images/logo.png" alt="BrandName" />
+              </a>
+            </div>
+
+            <!-- Menu -->
+            <div class="navbar-collapse" id="mainNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#hero">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#team">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#careers">Careers</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#services">Services</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-1">Service 1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-2">Service 2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service-3">Service 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#news">News</a>
+                  <ul class="dropdown">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#press">Press Release</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Section (Auth & Widget) -->
+              <div class="navbar-right">
+                <div class="navbar-right__widget">
+                  <ul>
+                    <li class="navbar-search">
+                      <a href="#search" class="navbar-search__icon search-switch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </a>
+                      <span class="navbar-search__label search-switch">Search</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
+        </div>
+      </div>
+      <div class="main-navbar-backdrop"></div>
+    </div>
+
+    <!-- Background Image (Fixed) -->
+    <div class="hero-v2__bg"></div>
+
+    <!-- Overlay Rectangle with Content Inside -->
+    <div class="hero-v2__overlay hero-v2__overlay--left">
+      <!-- Content Wrapper (inside overlay) -->
+      <div class="hero-v2__content-wrapper">
+        <!-- Content 1: Built for ambitious teams -->
+        <div class="hero-v2__content is-active">
+          <h1>Built for ambitious teams</h1>
+          <p>Modern experiences that combine strategy, design, and technology to move your business faster.</p>
+          <a class="btn btn-highlight" href="#contact">Talk to us</a>
+        </div>
+
+        <!-- Content 2: Services that ship faster -->
+        <div class="hero-v2__content">
+          <h1>Services that ship faster</h1>
+          <p>Strategy, UX/UI, and engineering squads that deliver end-to-end in weeks, not months.</p>
+          <a class="btn btn-highlight" href="#services">Explore services</a>
+        </div>
+
+        <!-- Content 3: Hear what our clients say -->
+        <div class="hero-v2__content">
+          <h1>Hear what our clients say</h1>
+          <p>Impactful partnerships that deliver measurable outcomes across industries.</p>
+          <a class="btn btn-highlight" href="#testimonials">View testimonials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="hero-v2__pagination">
+      <div class="hero-v2__pagination-dot is-active" data-slide="0"></div>
+      <div class="hero-v2__pagination-dot" data-slide="1"></div>
+      <div class="hero-v2__pagination-dot" data-slide="2"></div>
+    </div>
+  </section>
+
+  <!-- About Us - Canva-style slide experience -->
+  <section id="about-us">
+    <div class="about-wrapper">
+      <!-- Slide 1 -->
+      <div class="about-slide active">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-6 about-image">
+            <img src="images/about-us/about-us.jpg" alt="Who we are">
+          </div>
+          <div class="col-md-6 about-content">
+            <h2>Who we are</h2>
+            <p>
+              We are a digital product team focused on building
+              user‑centered experiences that feel modern and simple.
+            </p>
+            <a href="#" class="btn btn-dark">Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="about-slide">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-6 about-image">
+            <img src="images/about-us/about-us01.jpg" alt="Our mission">
+          </div>
+          <div class="col-md-6 about-content">
+            <h2>Our mission</h2>
+            <p>
+              We help companies grow sustainably by combining strategy,
+              design, and technology into one end‑to‑end partnership.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="about-slide">
+        <div class="row h-100 align-items-center">
+          <div class="col-md-6 about-image">
+            <img src="images/about-us/about-us02.jpg" alt="Our team">
+          </div>
+          <div class="col-md-6 about-content">
+            <h2>Our team</h2>
+            <p>
+              A young, curious team that loves experimenting,
+              learning fast, and turning ideas into real products.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="about-nav">
+      <button class="prev" aria-label="Previous slide">←</button>
+      <button class="next" aria-label="Next slide">→</button>
+    </div>
+  </section>
+
+  <!-- Services - Premium Multi-Card Slider -->
+  <section id="services" class="services">
+    <div class="services__container">
+      <!-- Label -->
+      <div class="services__label">OUR SERVICES</div>
+
+      <!-- Card Slider -->
+      <div class="services__slider">
+        <div class="services__track">
+          <!-- Service Card 1 -->
+          <div class="service-card" data-index="0">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-01.jpg" alt="Product Strategy">
+              </div>
+              <div class="service-card__label">Product Strategy</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__head">
+                <h3 class="service-card__title">Product Strategy</h3>
+                <div class="service-card__icon">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+              </div>
+              <p class="service-card__description">
+                Transform your vision into a clear roadmap. We help you define product goals, 
+                prioritize features, and build a strategy that aligns with your business objectives.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card" data-index="1">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-02.jpg" alt="UX Research">
+              </div>
+              <div class="service-card__label">UX Research</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__head">
+                <h3 class="service-card__title">UX Research</h3>
+                <div class="service-card__icon">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+              </div>
+              <p class="service-card__description">
+                Deep insights into user behavior and needs. We conduct comprehensive research 
+                to inform design decisions and create experiences that truly resonate.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card" data-index="2">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-03.jpg" alt="Design Systems">
+              </div>
+              <div class="service-card__label">Design Systems</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__head">
+                <h3 class="service-card__title">Design Systems</h3>
+                <div class="service-card__icon">
+                  <i class="fa-solid fa-palette"></i>
+                </div>
+              </div>
+              <p class="service-card__description">
+                Scalable, consistent design foundations. Build comprehensive design systems 
+                that ensure quality and speed across all your digital products.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card" data-index="3">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-04.jpg" alt="Web & Mobile">
+              </div>
+              <div class="service-card__label">Web & Mobile</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__head">
+                <h3 class="service-card__title">Web & Mobile</h3>
+                <div class="service-card__icon">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+              </div>
+              <p class="service-card__description">
+                Modern, performant applications built with cutting-edge technology. 
+                From responsive web apps to native mobile experiences.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="service-card" data-index="4">
+            <div class="service-card__left">
+              <div class="service-card__image">
+                <img src="images/services/service-05.jpg" alt="Cloud & DevOps">
+              </div>
+              <div class="service-card__label">Cloud & DevOps</div>
+            </div>
+            <div class="service-card__right">
+              <div class="service-card__head">
+                <h3 class="service-card__title">Cloud & DevOps</h3>
+                <div class="service-card__icon">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+              </div>
+              <p class="service-card__description">
+                Scalable infrastructure and automated workflows. Deploy faster, 
+                scale efficiently, and maintain reliability with modern DevOps practices.
+              </p>
+              <a href="#contact" class="btn btn-highlight service-card__button">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="services__nav services__nav--prev" aria-label="Previous service">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="services__nav services__nav--next" aria-label="Next service">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Categories</h2>
+        <p class="text-muted">Organize offerings or blog topics</p>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Corporate</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Technology</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Finance</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="btn w-100 btn-outline-secondary">Product</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category & News Combined Section -->
+  <section id="category-news">
+    <!-- Category Sidebar (Horizontal - Top, outside container) -->
+    <div class="category-sidebar">
+      <!-- Background Image with Parallax -->
+      <img src="images/category.jpg" alt="Category Background" class="category-sidebar__bg">
+      
+      <!-- Overlay -->
+      <div class="category-sidebar__overlay"></div>
+      
+      <!-- Category Carousel -->
+      <div class="category-sidebar__content">
+        <div class="category-carousel">
+          <div class="category-item" data-category="all">All</div>
+          <div class="category-item" data-category="corporate">Corporate</div>
+          <div class="category-item" data-category="technology">Technology</div>
+          <div class="category-item" data-category="finance">Finance</div>
+          <div class="category-item" data-category="product">Product</div>
+          <div class="category-item" data-category="design">Design</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container only wraps news section -->
+    <div class="category-news__container">
+      <!-- News Section (Below Category) -->
+      <div class="news-section">
+      <!-- News Header -->
+      <div class="news-header">
+        <div class="news-header__label">LATEST NEWS</div>
+        <a href="#news" class="news-header__link">View All</a>
+      </div>
+
+      <!-- News Grid -->
+      <div class="news-grid">
+        <!-- News Item 1 -->
+        <a href="#" class="news-item" data-category="corporate">
+          <img src="images/news/news-01.jpg" alt="News 1" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Launch: New Product Suite</h5>
+            <p>Discover the latest tools designed for enterprise teams.</p>
+          </div>
+        </a>
+
+        <!-- News Item 2 -->
+        <a href="#" class="news-item" data-category="technology">
+          <img src="images/news/news-02.jpg" alt="News 2" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Case Study: Growth</h5>
+            <p>How we helped increase ARR by 40% in 9 months.</p>
+          </div>
+        </a>
+
+        <!-- News Item 3 -->
+        <a href="#" class="news-item" data-category="corporate">
+          <img src="images/news/news-03.jpg" alt="News 3" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Inside: Culture</h5>
+            <p>Meet the team and our way of building together.</p>
+          </div>
+        </a>
+
+        <!-- News Item 4 -->
+        <a href="#" class="news-item" data-category="finance">
+          <img src="images/news/news-04.jpg" alt="News 4" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Financial Insights Q4</h5>
+            <p>Quarterly report highlights strong performance across sectors.</p>
+          </div>
+        </a>
+
+        <!-- News Item 5 -->
+        <a href="#" class="news-item" data-category="product">
+          <img src="images/news/news-05.jpg" alt="News 5" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Product Update: v2.0</h5>
+            <p>New features and improvements in our latest release.</p>
+          </div>
+        </a>
+
+        <!-- News Item 6 -->
+        <a href="#" class="news-item" data-category="design">
+          <img src="images/news/news-06.jpg" alt="News 6" class="news-item__image">
+          <div class="news-item__overlay"></div>
+          <div class="news-item__content">
+            <h5>Design System Launch</h5>
+            <p>Introducing our comprehensive design system for consistency.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-light">Portfolio</h2>
+        <p class="text-muted">Selected projects</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Enterprise Platform</h5>
+              <p class="card-text text-muted">Scalable platform for B2B operations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Analytics Dashboard</h5>
+              <p class="card-text text-muted">Data-rich insights with clean UI.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="images/portfolio-3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Site</h5>
+              <p class="card-text text-muted">High-converting landing experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials - Swiper Carousel -->
+  <section class="testimonial" id="testimonials">
+    <div class="container">
+      <!-- Testimonial Header -->
+      <div class="testimonial__header">
+        <h2 class="text-primary">What Our Clients Say</h2>
+        <p>Read testimonials from our satisfied customers</p>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div class="testimonial__carousel-wrapper">
+        <div class="swiper testimonial__carousel">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-01.jpg" alt="Client 1">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">John Doe</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Excellent service and professional team! They delivered exactly what we needed and exceeded our expectations.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-02.jpg" alt="Client 2">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Jane Smith</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Outstanding work! The team was responsive, creative, and delivered on time. Our business has grown since working with them.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-04.jpg" alt="Client 3">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Michael Johnson</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Professional, reliable, and results-driven. They understand our needs and provide solutions that work.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-05.jpg" alt="Client 4">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Sarah Williams</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Amazing experience from start to finish. The team is knowledgeable, friendly, and always available to help.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-06.jpg" alt="Client 5">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">David Brown</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “The quality of work is exceptional and the team goes above and beyond. Highly satisfied with the results.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-07.jpg" alt="Client 6">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Emily Davis</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Incredible attention to detail and customer service. They truly care about delivering the best results.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-08.jpg" alt="Client 7">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Robert Wilson</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Fast, efficient, and professional. The team exceeded all expectations and delivered outstanding results.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 8 -->
+            <div class="swiper-slide">
+              <div class="testimonial__card-container">
+                <div class="testimonial__avatar-card">
+                  <img src="images/testimonial/testimonial-09.jpg" alt="Client 8">
+                </div>
+                <div class="testimonial__content-card">
+                  <div class="testimonial__content-card-header">
+                    <div class="testimonial__content-card-info">
+                      <h3 class="testimonial__content-card-name">Lisa Anderson</h3>
+                      <div class="testimonial__content-card-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="testimonial__content-card-comment">
+                    “Outstanding communication and project management. They kept us informed every step of the way.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="testimonial__carousel-btn testimonial__carousel-btn--prev" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="testimonial__carousel-btn testimonial__carousel-btn--next" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <h2 class="fw-light mb-3">Contact</h2>
+          <p>Tell us about your project. We respond within 1 business day.</p>
+          <ul class="list-unstyled text-muted">
+            <li><i class="fa-solid fa-phone me-2 text-secondary"></i>+84 123 456 789</li>
+            <li><i class="fa-solid fa-envelope me-2 text-secondary"></i>hello@company.com</li>
+            <li><i class="fa-solid fa-location-dot me-2 text-secondary"></i>123 Business Street</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="Project inquiry" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Brief description" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-dark px-4">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__container">
+        <!-- Footer Content -->
+        <div class="footer__content">
+          <!-- About Column -->
+          <div class="footer__column footer__about">
+            <div class="footer__about-logo">
+              <span>Your Company</span>
+            </div>
+            <p>
+              We provide exceptional services and solutions to help your business grow and succeed in the digital world.
+            </p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="footer__column">
+            <h3>Quick Links</h3>
+            <ul class="footer__links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about-us">About Us</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer__column">
+            <h3>Services</h3>
+            <ul class="footer__links">
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Digital Marketing</a></li>
+              <li><a href="#services">Consulting</a></li>
+              <li><a href="#services">Cloud Solutions</a></li>
+              <li><a href="#services">Data Analytics</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info Column -->
+          <div class="footer__column">
+            <h3>Contact Info</h3>
+            <div class="footer__contact">
+              <div class="footer__contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <p>123 Business Street<br>City, State 12345</p>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <p>+84 123 456 789</p>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <p>hello@company.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+          <p>&copy; <script>document.write(new Date().getFullYear())</script> Your Company. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendors/js/jquery/dist/jquery.min.js"></script>
+  <script src="assets/vendors/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendors/js/gsap/dist/gsap.min.js"></script>
+  <script src="assets/vendors/js/swiper/swiper-bundle.min.js"></script>
+  <script type="module" src="assets/js/main-v2.js"></script>
+</body>
+</html>
+

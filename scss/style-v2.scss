@@ -1,0 +1,26 @@
+// V2 Theme Stylesheet
+// This imports all sections but uses hero-v2 instead of hero
+
+// @use 'custom';
+
+@use 'variables-variant' as *;
+
+// IMPORT THE COMPONENTS 
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
+@use 'components/responsive';
+
+// IMPORT THE SECTIONS 
+@use 'sections/main-navbar';
+@use 'sections/hero-v2'; // Use hero-v2 instead of hero
+@use 'sections/about';
+@use 'sections/services';
+@use 'sections/category-news';
+@use 'sections/testimonial';
+@use 'sections/footer';
+
+// FONT AWESOME (after uses to avoid @use ordering errors)
+@import 'fa';
+
