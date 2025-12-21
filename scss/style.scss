@@ -16,6 +16,7 @@
 @use 'sections/services';
 @use 'sections/category-news';
 @use 'sections/testimonial';
+@use 'sections/footer';
 
 // FONT AWESOME (after uses to avoid @use ordering errors)
 @import 'fa';
