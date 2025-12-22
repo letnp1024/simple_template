@@ -15,7 +15,7 @@
 // IMPORT THE SECTIONS 
 @use 'sections/main-navbar';
 @use 'sections/hero-v3'; // Use hero-v3 instead of hero
-@use 'sections/about';
+@use 'sections/about-v3' as about;
 @use 'sections/services';
 @use 'sections/category-news';
 @use 'sections/testimonial';

@@ -1,12 +1,32 @@
 @use '../custom' as *;
+@use '../variables' as *;
 
 // GRADIENT MIXIN 
 
-@mixin glassmorphic($bg-opacity: 0.75, $blur: 10px, $bg-color: $white) {
+@mixin glassmorphic($bg-opacity: 0.75, $blur: 10px, $bg-color: $color-neutral) {
     background-color: rgba($bg-color, $bg-opacity);
     backdrop-filter: blur($blur);
     -webkit-backdrop-filter: blur($blur);
   }
+
+// GRADIENT TEXT
+@mixin gradient-text {
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// GRADIENT BACKGROUND OVERLAY
+@mixin gradient-background-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba($color-primary, 0) 0%,
+    rgba($color-primary, 0.3) 50%,
+    rgba($color-primary, 0.9) 100%
+  );
+}
+
 // ABSOLUTE CENTER 
 
 // TRANSITION PROPERTY 

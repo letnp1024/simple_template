@@ -1,0 +1,209 @@
+@use '../variables' as *;
+
+.about-v3 {
+  position: relative;
+  width: 100%;
+  padding: $space-2xl 0;
+  background-color: $color-neutral;
+
+  // Container wrapper (Bootstrap container)
+  .container {
+    position: relative;
+  }
+
+  // Inner container for card and bar
+  &__container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $space-lg;
+    padding-bottom: 40px; // Space for bar overlay
+  }
+
+  // About-us Card (Rectangle)
+  &__card {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    min-height: 400px;
+    background-color: $color-neutral;
+    border-radius: $radius-lg;
+    padding: $space-2xl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-md;
+    overflow: visible; // Changed from hidden to visible to allow bar overlay
+    z-index: 2;
+
+    @media (max-width: 991px) {
+      height: 50vh;
+      min-height: 350px;
+      padding: $space-xl;
+    }
+
+    @media (max-width: 575px) {
+      height: 60vh;
+      min-height: 300px;
+      padding: $space-lg;
+    }
+  }
+
+  // Card Content
+  &__card-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+    position: absolute;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+    }
+
+    h2 {
+      font-size: $font-size-h2;
+      font-weight: $font-weight-bold;
+      color: $color-text;
+      margin-bottom: $space-lg;
+      line-height: 1.2;
+
+      @media (max-width: 991px) {
+        font-size: $font-size-h3;
+      }
+
+      @media (max-width: 575px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: $font-size-body;
+      color: rgba($color-text, 0.8);
+      line-height: $line-height-base;
+      margin-bottom: $space-xl;
+
+      @media (max-width: 575px) {
+        font-size: 1rem;
+      }
+    }
+
+    .btn {
+      margin-top: $space-md;
+    }
+  }
+
+  // Bar (Navigation bar - width 80%, đè 1/2 lên card)
+  &__bar {
+    position: absolute;
+    width: 80%;
+    height: 80px;
+    background-color: $color-primary;
+    border-radius: $radius-lg;
+    bottom: -40px; // Đè 1/2 lên card (height 80px / 2 = 40px)
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $space-lg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+    @media (max-width: 991px) {
+      width: 90%;
+    }
+
+    @media (max-width: 575px) {
+      width: 95%;
+      height: 70px;
+      bottom: -35px;
+      padding: 0 $space-md;
+    }
+  }
+
+  // Bar Items Container
+  &__bar-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-md;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+
+    @media (max-width: 575px) {
+      gap: $space-sm;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: $space-xs;
+      
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: rgba($color-neutral, 0.1);
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: rgba($color-neutral, 0.3);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  // Bar Item
+  &__bar-item {
+    padding: $space-md $space-lg;
+    color: $color-neutral;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: $radius-sm;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+
+    @media (max-width: 575px) {
+      padding: $space-sm $space-md;
+      font-size: 0.875rem;
+    }
+
+    // Default state
+    &:not(.is-active) {
+      opacity: 0.8;
+    }
+
+    // Active state
+    &.is-active {
+      background-color: rgba($color-neutral, 0.15);
+      color: $color-secondary;
+      opacity: 1;
+    }
+
+    // Hover state
+    &:hover {
+      background-color: rgba($color-neutral, 0.2);
+      color: $color-secondary;
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    // Active hover (nhạt hơn)
+    &.is-active:hover {
+      background-color: rgba($color-neutral, 0.25);
+    }
+  }
+}
+

@@ -195,7 +195,6 @@
       <div class="hero-v3__content">
         <div class="hero-v3__content-label">Business Consultant</div>
         <h1>Transform Your Business with Expert Consulting</h1>
-        <p>We provide strategic guidance and innovative solutions to help your business achieve sustainable growth and competitive advantage in today's dynamic market.</p>
         <div class="hero-v3__content-buttons">
           <a href="#services" class="btn btn-primary">Services</a>
           <a href="#about-us" class="btn btn-outline">About Us <i class="fa-solid fa-arrow-right"></i></a>
@@ -204,16 +203,14 @@
     </div>
   </section>
 
-  <!-- About Us - Canva-style slide experience -->
-  <section id="about-us">
-    <div class="about-wrapper">
-      <!-- Slide 1 -->
-      <div class="about-slide active">
-        <div class="row h-100 align-items-center">
-          <div class="col-md-6 about-image">
-            <img src="images/about-us/about-us.jpg" alt="Who we are">
-          </div>
-          <div class="col-md-6 about-content">
+  <!-- About Us V3 -->
+  <section id="about-us" class="about-v3">
+    <div class="container">
+      <div class="about-v3__container">
+        <!-- About-us Card -->
+        <div class="about-v3__card">
+          <!-- Content 1: Who we are -->
+          <div class="about-v3__card-content is-active">
             <h2>Who we are</h2>
             <p>
               We are a digital product team focused on building
@@ -221,46 +218,48 @@
             </p>
             <a href="#" class="btn btn-dark">Learn more</a>
           </div>
-        </div>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="about-slide">
-        <div class="row h-100 align-items-center">
-          <div class="col-md-6 about-image">
-            <img src="images/about-us/about-us01.jpg" alt="Our mission">
-          </div>
-          <div class="col-md-6 about-content">
+          <!-- Content 2: Our mission -->
+          <div class="about-v3__card-content">
             <h2>Our mission</h2>
             <p>
               We help companies grow sustainably by combining strategy,
               design, and technology into one end‑to‑end partnership.
             </p>
+            <a href="#" class="btn btn-dark">Learn more</a>
           </div>
-        </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="about-slide">
-        <div class="row h-100 align-items-center">
-          <div class="col-md-6 about-image">
-            <img src="images/about-us/about-us02.jpg" alt="Our team">
-          </div>
-          <div class="col-md-6 about-content">
+          <!-- Content 3: Our team -->
+          <div class="about-v3__card-content">
             <h2>Our team</h2>
             <p>
               A young, curious team that loves experimenting,
               learning fast, and turning ideas into real products.
             </p>
+            <a href="#" class="btn btn-dark">Learn more</a>
+          </div>
+
+          <!-- Content 4: Our values -->
+          <div class="about-v3__card-content">
+            <h2>Our values</h2>
+            <p>
+              Integrity, innovation, and excellence guide everything we do.
+              We believe in building lasting relationships through trust and quality.
+            </p>
+            <a href="#" class="btn btn-dark">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Navigation Bar (đè 1/2 vào cạnh dưới của card) -->
+        <div class="about-v3__bar">
+          <div class="about-v3__bar-items">
+            <button class="about-v3__bar-item is-active" data-index="0">Who we are</button>
+            <button class="about-v3__bar-item" data-index="1">Our mission</button>
+            <button class="about-v3__bar-item" data-index="2">Our team</button>
+            <button class="about-v3__bar-item" data-index="3">Our values</button>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="about-nav">
-      <button class="prev" aria-label="Previous slide">←</button>
-      <button class="next" aria-label="Next slide">→</button>
     </div>
   </section>
 

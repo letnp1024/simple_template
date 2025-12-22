@@ -1,6 +1,6 @@
 import { initHeroV3 } from './sections/hero-v3.js';
 import { initNavbarAndInfoRow, initSearchOverlay } from './sections/navbar.js';
-import { initAboutSection } from './sections/about.js';
+import { initAboutV3 } from './sections/about-v3.js';
 import { initServicesSection } from './sections/services.js';
 import { initCategoryNewsSection } from './sections/category-news.js';
 import { initTestimonialSection } from './sections/testimonial.js';
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroV3(); // Use hero-v3 instead of hero
     initNavbarAndInfoRow();
     initSearchOverlay();
-    initAboutSection();
+    initAboutV3();
     initServicesSection();
     initCategoryNewsSection();
     initTestimonialSection();

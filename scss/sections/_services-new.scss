@@ -1,0 +1,360 @@
+@use '../variables' as *;
+@use '../components/mixins' as *;
+
+// ============================================
+// Services Component
+// ============================================
+
+.services {
+  padding: $space-2xl 0;
+  background-color: $color-neutral;
+
+  // ============================================
+  // Services Carousel
+  // ============================================
+  &__carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__carousel {
+    overflow: hidden;
+    padding: 0px;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: auto;
+      display: flex;
+    }
+  }
+
+  // Navigation Buttons - Glassmorphic
+  &__carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    @include glassmorphic;
+    font-size: 1.2rem;
+    @include gradient-text;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: rgba($color-neutral, 0.6);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &--prev {
+      left: -25px;
+
+      @media (max-width: 768px) {
+        left: -20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+    }
+
+    &--next {
+      right: -25px;
+
+      @media (max-width: 768px) {
+        right: -20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // ============================================
+  // Service Card
+  // ============================================
+  &__card {
+    background-color: $color-neutral;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 60px rgba(5, 51, 51, 0.2);
+
+      .services__card-overlay {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  // ============================================
+  // Card Image Wrapper
+  // ============================================
+  &__card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  &__card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transition: transform 0.3s ease;
+
+    .services__card:hover & {
+      transform: scale(1.05);
+    }
+  }
+
+  // ============================================
+  // Card Overlay (Hover Effect)
+  // ============================================
+  &__card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include gradient-background-overlay;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 2;
+  }
+
+  &__card-overlay-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    color: $color-neutral;
+    padding: 30px 30px 15px 30px;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      padding: 20px 20px 15px 20px;
+      gap: 12px;
+    }
+  }
+
+  // Dòng 1: Header với Title (trái) và Icon (phải)
+  &__card-overlay-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0;
+
+    @media (max-width: 576px) {
+      gap: 15px;
+    }
+  }
+
+  // Title trong overlay header (màu trắng)
+  &__card-overlay-title {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    color: $color-neutral;
+    margin: 0;
+    flex: 1;
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  // Icon trong header (phải)
+  &__card-overlay-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 3rem;
+      opacity: 0.8;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      color: $color-neutral;
+
+      @media (max-width: 576px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .services__card:hover & i {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  // Content container (Dòng 2)
+  &__card-overlay-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  // ============================================
+  // Card Content (Below Image)
+  // ============================================
+  &__card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    flex: 1;
+  }
+
+  // Icon trong card-content (phía trước card-title)
+  &__card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba($color-neutral, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+
+    i {
+      font-size: 1.5rem;
+      color: $color-text;
+      transition: transform 0.3s ease;
+    }
+
+    .services__card:hover & {
+      transform: scale(1.1);
+
+      i {
+        @include gradient-text;
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 576px) {
+      width: 50px;
+      height: 50px;
+
+      i {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: 1.5rem;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    margin: 0;
+    transition: all 0.3s ease;
+
+    .services__card:hover & {
+      @include gradient-text;
+    }
+  }
+
+  &__card-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba($color-neutral, 0.9);
+    margin: 0;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.6em * 3);
+  }
+
+  &__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    background-color: $color-neutral;
+    color: $color-primary;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: $font-weight-semibold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    align-self: flex-start;
+
+    i {
+      font-size: 0.875rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background-color: rgba($color-neutral, 0.9);
+      transform: translateX(5px);
+      box-shadow: $shadow-md;
+
+      i {
+        transform: translateX(3px);
+      }
+    }
+
+    @media (max-width: 576px) {
+      align-self: center;
+      padding: 10px 24px;
+      gap: 6px;
+    }
+  }
+}
+

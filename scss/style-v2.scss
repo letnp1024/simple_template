@@ -16,7 +16,7 @@
 @use 'sections/main-navbar';
 @use 'sections/hero-v2'; // Use hero-v2 instead of hero
 @use 'sections/about';
-@use 'sections/services';
+@use 'sections/services-new' as services;
 @use 'sections/category-news';
 @use 'sections/testimonial';
 @use 'sections/footer';
