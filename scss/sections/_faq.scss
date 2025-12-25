@@ -1,0 +1,223 @@
+@use '../variables' as *;
+
+// FAQ Section
+.faq-section {
+  padding: $space-2xl * 2 0;
+  background-color: $color-bg;
+  position: relative;
+}
+
+.faq-section__header {
+  text-align: center;
+  margin-bottom: $space-2xl * 2;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $space-lg;
+}
+
+.faq-section__title {
+  font-size: 48px;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $space-md;
+  line-height: 1.2;
+
+  @media (max-width: 991px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
+.faq-section__description {
+  font-size: 18px;
+  color: rgba($color-text, 0.7);
+  line-height: 1.6;
+  margin: 0;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.faq-section__content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+// Accordion Custom Styling
+.accordion {
+  --bs-accordion-border-color: rgba($color-text, 0.1);
+  --bs-accordion-border-radius: $radius-md;
+  --bs-accordion-inner-border-radius: $radius-md;
+  --bs-accordion-btn-padding-x: $space-xl;
+  --bs-accordion-btn-padding-y: $space-lg;
+  --bs-accordion-body-padding-x: $space-xl;
+  --bs-accordion-body-padding-y: $space-xl;
+  --bs-accordion-active-color: $color-primary;
+  --bs-accordion-btn-focus-border-color: $color-primary;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba($color-primary, 0.25);
+}
+
+.accordion-item {
+  background-color: $color-neutral;
+  border: 1px solid rgba($color-text, 0.1);
+  border-radius: $radius-md;
+  margin-bottom: $space-md;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.accordion-button {
+  background-color: $color-neutral;
+  color: $color-text;
+  font-weight: $font-weight-semibold;
+  font-size: 16px;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-lg $space-xl;
+  transition: all 0.3s ease;
+
+  &:not(.collapsed) {
+    background-color: rgba($color-primary, 0.05);
+    color: $color-primary;
+    box-shadow: none;
+
+    .faq-item__icon {
+      color: $color-primary;
+    }
+
+    &::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23001d3d'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      transform: rotate(180deg);
+    }
+  }
+
+  &::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 0.25rem rgba($color-primary, 0.25);
+  }
+}
+
+.faq-item__icon {
+  color: $color-primary;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.faq-item__question {
+  flex: 1;
+  text-align: left;
+}
+
+.accordion-body {
+  color: rgba($color-text, 0.8);
+  font-size: 15px;
+  line-height: 1.7;
+  padding: $space-xl;
+  background-color: $color-neutral;
+}
+
+// Mobile adjustments
+@media (max-width: 767px) {
+  .faq-section {
+    padding: $space-2xl 0;
+  }
+
+  .faq-section__header {
+    margin-bottom: $space-2xl;
+  }
+
+  .faq-section__content {
+    padding: 0 $space-md;
+  }
+
+  .accordion-button {
+    padding: $space-md $space-lg;
+    font-size: 15px;
+    gap: $space-sm;
+  }
+
+  .faq-item__icon {
+    font-size: 18px;
+  }
+
+  .accordion-body {
+    padding: $space-lg;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .accordion-item {
+    margin-bottom: $space-sm;
+  }
+}
+
+// Alternative: Light background variant
+.faq-section--light {
+  background-color: #f8f9fa;
+
+  .accordion-item {
+    background-color: $color-neutral;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Alternative: Dark background variant
+.faq-section--dark {
+  background-color: $color-bg;
+
+  .faq-section__title {
+    color: $color-neutral;
+  }
+
+  .faq-section__description {
+    color: rgba($color-neutral, 0.8);
+  }
+
+  .accordion-item {
+    background-color: rgba($color-neutral, 0.05);
+    border-color: rgba($color-neutral, 0.2);
+  }
+
+  .accordion-button {
+    background-color: rgba($color-neutral, 0.05);
+    color: $color-neutral;
+
+    &:not(.collapsed) {
+      background-color: rgba($color-primary, 0.2);
+      color: $color-neutral;
+    }
+  }
+
+  .accordion-body {
+    background-color: rgba($color-neutral, 0.05);
+    color: rgba($color-neutral, 0.9);
+  }
+}
+
