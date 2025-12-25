@@ -1,0 +1,163 @@
+@use '../variables' as *;
+
+// CTA Section
+.cta-section {
+  position: relative;
+  padding: $space-2xl * 2 0;
+  background: linear-gradient(135deg, $color-primary 0%, $color-surface 100%);
+  overflow: hidden;
+
+  // Optional: Add background pattern or image overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+    opacity: 0.3;
+  }
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+.cta-section__title {
+  font-size: 48px;
+  font-weight: $font-weight-bold;
+  color: $color-neutral;
+  margin-bottom: $space-lg;
+  line-height: 1.2;
+
+  @media (max-width: 991px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+    margin-bottom: $space-md;
+  }
+}
+
+.cta-section__description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba($color-neutral, 0.9);
+  margin-bottom: $space-2xl;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    margin-bottom: $space-xl;
+  }
+}
+
+.cta-section__buttons {
+  display: flex;
+  gap: $space-md;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.cta-section__button {
+  padding: $space-md $space-2xl;
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 280px;
+    padding: $space-md $space-xl;
+  }
+}
+
+// Button highlight (primary)
+.btn-highlight.cta-section__button {
+  background: $color-secondary;
+  color: $color-text;
+  border: 2px solid $color-secondary;
+
+  &:hover {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: $color-text;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba($color-secondary, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Button outline light
+.btn-outline-light.cta-section__button {
+  background: transparent;
+  color: $color-neutral;
+  border: 2px solid $color-neutral;
+
+  &:hover {
+    background: $color-neutral;
+    color: $color-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba($color-neutral, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Alternative: Dark background variant
+.cta-section--dark {
+  background: linear-gradient(135deg, $color-bg 0%, $color-surface 100%);
+
+  .cta-section__title {
+    color: $color-neutral;
+  }
+
+  .cta-section__description {
+    color: rgba($color-neutral, 0.8);
+  }
+}
+
+// Alternative: Light background variant
+.cta-section--light {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  .cta-section__title {
+    color: $color-text;
+  }
+
+  .cta-section__description {
+    color: rgba($color-text, 0.7);
+  }
+
+  .btn-outline-light.cta-section__button {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-neutral;
+    }
+  }
+}
+
