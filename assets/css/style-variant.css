@@ -11946,7 +11946,7 @@ textarea.form-control-lg {
   --color-accent: #ffd60a;
   --color-neutral: #ffffff;
   --color-surface: #003566;
-  --color-bg: #000814;
+  --color-bg: #ffffff;
   --color-text: #000814;
   --font-family-base: Overused Grotesk, Helvetica Neue, Arial, sans-serif;
   --font-size-base: 21pt;
@@ -12683,7 +12683,7 @@ textarea.form-control-lg {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 8, 20, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(2px);
     z-index: 11 !important;
     opacity: 0;
@@ -12926,12 +12926,12 @@ textarea.form-control-lg {
   min-height: 100vh;
   color: #ffffff;
   overflow: hidden;
-  background-color: #000814;
+  background-color: #ffffff;
 }
 .hero .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 8, 20, 0.8) 0%, rgba(0, 8, 20, 0.35) 50%, rgba(0, 8, 20, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.1) 100%);
   backdrop-filter: blur(1px);
   z-index: 1;
 }
@@ -13353,7 +13353,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background-color: rgba(0, 8, 20, 0.85);
+  background-color: rgba(255, 255, 255, 0.85);
   color: #ffffff;
   font-size: 21pt;
   font-weight: 600;
@@ -13628,7 +13628,7 @@ textarea.form-control-lg {
 #category-news {
   position: relative;
   width: 100%;
-  background-color: #000814;
+  background-color: #ffffff;
   padding: 48px 0;
 }
 #category-news .category-news__container {
@@ -13708,7 +13708,7 @@ textarea.form-control-lg {
 #category-news .news-section {
   width: 100%;
   padding: 0;
-  background-color: #000814;
+  background-color: #ffffff;
 }
 #category-news .news-section .news-header {
   display: flex;
@@ -14079,7 +14079,7 @@ textarea.form-control-lg {
   position: relative;
   width: 100%;
   padding: 48px 0 48px;
-  background: linear-gradient(135deg, #003566 0%, #000814 100%);
+  background: linear-gradient(135deg, #003566 0%, #ffffff 100%);
   color: #ffffff;
   overflow: hidden;
   margin-top: 48px;
@@ -14091,7 +14091,7 @@ textarea.form-control-lg {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 8, 20, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   z-index: 1;
 }
 .footer__container {

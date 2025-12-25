@@ -1,0 +1,232 @@
+@use '../variables' as *;
+
+// News Sidebar
+.news-sidebar {
+  padding-left: 40px;
+}
+
+.news-sidebar__item {
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: $space-md;
+
+    h4 {
+      font-size: 16px;
+      font-weight: $font-weight-bold;
+      color: $color-text;
+      text-transform: uppercase;
+      margin: 0;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 50px;
+        height: 2px;
+        background: $color-primary;
+        content: "";
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      line-height: 30px;
+      margin-bottom: $space-xs;
+
+      a {
+        font-size: 14px;
+        color: $color-text;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+
+        &:hover {
+          color: $color-primary;
+
+          span {
+            color: $color-text;
+          }
+        }
+
+        span {
+          float: right;
+          color: #888888;
+        }
+      }
+    }
+  }
+}
+
+// Search Widget
+.news-sidebar__search {
+  position: relative;
+  display: flex;
+
+  input {
+    flex: 1;
+    padding: $space-md;
+    border: 1px solid #e0e0e0;
+    border-radius: $radius-sm 0 0 $radius-sm;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+
+  button {
+    padding: $space-md $space-lg;
+    background: $color-primary;
+    color: $color-neutral;
+    border: none;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $color-secondary;
+    }
+
+    i {
+      font-size: 14px;
+    }
+  }
+}
+
+// Featured Posts Widget
+.news-sidebar__feature {
+  .news-sidebar__feature__item {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 30px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .news-sidebar__feature__item__pic {
+    float: left;
+    margin-right: 25px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: $radius-sm;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .news-sidebar__feature__item:hover .news-sidebar__feature__item__pic img {
+    transform: scale(1.1);
+  }
+
+  .news-sidebar__feature__item__text {
+    overflow: hidden;
+
+    h6 {
+      font-size: 14px;
+      color: $color-text;
+      font-weight: $font-weight-semibold;
+      line-height: 21px;
+      margin-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+
+    span {
+      font-size: 12px;
+      color: #888888;
+      display: block;
+    }
+  }
+
+  .news-sidebar__feature__item:hover .news-sidebar__feature__item__text h6 {
+    color: $color-primary;
+  }
+}
+
+// Tags Widget
+.news-sidebar__tags {
+  a {
+    display: inline-block;
+    font-size: 13px;
+    color: #666666;
+    border: 1px solid #f2f2f2;
+    padding: 8px 14px 7px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: $radius-sm;
+
+    &:hover {
+      color: $color-text;
+      border-color: $color-primary;
+      background: rgba($color-primary, 0.05);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 991px) {
+  .news-sidebar {
+    padding-left: 0;
+    margin-top: $space-2xl;
+  }
+
+  .news-sidebar__item {
+    margin-bottom: $space-2xl;
+
+    .section-title {
+      margin-bottom: $space-lg;
+
+      h4 {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .news-sidebar__feature {
+    .news-sidebar__feature__item__pic {
+      width: 70px;
+      height: 70px;
+      margin-right: $space-md;
+    }
+
+    .news-sidebar__feature__item__text {
+      h6 {
+        font-size: 13px;
+      }
+    }
+  }
+}
+

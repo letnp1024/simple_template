@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Details - Corporate Template</title>
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendors/css/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vendors/css/animate.css/animate.min.css" />
+  <link rel="stylesheet" href="assets/vendors/css/swiper/swiper-bundle.min.css" />
+
+  <!-- Main style (compiled from scss/style.scss) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Global search overlay -->
+  <div class="search-model" style="display: none;">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+      <div class="search-close-switch">+</div>
+      <form class="search-model-form" role="search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm tại đây..."
+          autocomplete="off"
+        />
+      </form>
+    </div>
+  </div>
+
+  <!-- Header with Navbar -->
+  <header class="main-navbar">
+    <div class="container">
+      <div class="main-navbar-inner">
+        <nav class="navbar navbar-expand-lg">
+          <!-- Logo -->
+          <div class="navbar-brand">
+            <a href="index.html">
+              <img src="images/logo.png" alt="BrandName" />
+            </a>
+          </div>
+
+          <!-- Menu -->
+          <div class="navbar-collapse" id="mainNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Section (Search) -->
+          <div class="navbar-right">
+            <div class="navbar-right__widget">
+              <ul>
+                <li class="navbar-search">
+                  <a href="#search" class="navbar-search__icon search-switch">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </a>
+                  <span class="navbar-search__label search-switch">Search</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div class="main-navbar-backdrop"></div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <div class="breadcrumb__links">
+        <a href="index.html"><i class="fa-solid fa-home"></i> Home</a>
+        <a href="news.html">News</a>
+        <span>News Details</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Details Section -->
+  <section class="news-details">
+    <div class="container">
+      <div class="row">
+        <!-- News Details Content -->
+        <div class="col-lg-8">
+          <div class="news-details__item">
+            <div class="news-details__item__pic">
+              <img src="images/news/news-01.jpg" alt="Launch: New Product Suite">
+            </div>
+            <div class="news-details__item__title">
+              <span class="tip">Corporate</span>
+              <h4>Launch: New Product Suite</h4>
+              <ul>
+                <li><i class="fa-solid fa-user"></i> <span>Admin</span></li>
+                <li><i class="fa-solid fa-calendar"></i> <span>15 Jan 2024</span></li>
+                <li><i class="fa-solid fa-comment"></i> <span>12 Comments</span></li>
+              </ul>
+            </div>
+            <div class="news-details__desc">
+              <p>We are thrilled to announce the launch of our new product suite designed specifically for enterprise teams. This comprehensive solution combines powerful features with intuitive design to help your business grow and succeed in today's competitive market.</p>
+              <p>Our team has spent months researching and developing this suite, taking into account feedback from hundreds of enterprise customers. The result is a product that not only meets but exceeds expectations, providing tools that are both powerful and easy to use.</p>
+              <p>The new product suite includes advanced analytics, seamless integrations, and a user-friendly interface that makes complex tasks simple. Whether you're managing a small team or a large enterprise, our solution scales with your needs.</p>
+            </div>
+            <div class="news-details__quote">
+              <div class="icon">
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+              <p>This is the most comprehensive enterprise solution we've seen. It has transformed how we work and collaborate as a team.</p>
+            </div>
+            <div class="news-details__desc">
+              <p>We believe that great products come from understanding our customers' needs. That's why we've built this suite with flexibility and customization at its core. You can tailor every aspect to fit your unique workflow and requirements.</p>
+              <p>As we continue to evolve and improve, we remain committed to providing the best possible experience for our users. We're excited to see how this new suite will help businesses achieve their goals.</p>
+            </div>
+            <div class="news-details__tags">
+              <a href="#">Business</a>
+              <a href="#">Technology</a>
+              <a href="#">Product</a>
+              <a href="#">Innovation</a>
+              <a href="#">Enterprise</a>
+            </div>
+            <div class="news-details__btns">
+              <div class="news-details__btn__item">
+                <h6>
+                  <a href="#"><i class="fa-solid fa-arrow-left"></i> Previous Post</a>
+                </h6>
+              </div>
+              <div class="news-details__btn__item news-details__btn__item--next">
+                <h6>
+                  <a href="#">Next Post <i class="fa-solid fa-arrow-right"></i></a>
+                </h6>
+              </div>
+            </div>
+            <div class="news-details__comment">
+              <h5>Comments (12)</h5>
+              <a href="#" class="leave-btn">Leave a comment</a>
+              
+              <!-- Comment Item 1 -->
+              <div class="news-comment__item">
+                <div class="news-comment__item__pic">
+                  <img src="images/testimonial/testimonial-01.jpg" alt="John Doe">
+                </div>
+                <div class="news-comment__item__text">
+                  <h6>John Doe</h6>
+                  <p>This is an excellent product launch! The features look amazing and I can't wait to try them out. Great work by the team.</p>
+                  <ul>
+                    <li><i class="fa-solid fa-calendar"></i> 15 Jan 2024</li>
+                    <li><i class="fa-solid fa-reply"></i> Reply</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Comment Item 2 (Reply) -->
+              <div class="news-comment__item news-comment__item--reply">
+                <div class="news-comment__item__pic">
+                  <img src="images/testimonial/testimonial-02.jpg" alt="Jane Smith">
+                </div>
+                <div class="news-comment__item__text">
+                  <h6>Jane Smith</h6>
+                  <p>I completely agree! The user interface is so intuitive. This will definitely improve our workflow.</p>
+                  <ul>
+                    <li><i class="fa-solid fa-calendar"></i> 15 Jan 2024</li>
+                    <li><i class="fa-solid fa-reply"></i> Reply</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Comment Item 3 -->
+              <div class="news-comment__item">
+                <div class="news-comment__item__pic">
+                  <img src="images/testimonial/testimonial-04.jpg" alt="Michael Johnson">
+                </div>
+                <div class="news-comment__item__text">
+                  <h6>Michael Johnson</h6>
+                  <p>Looking forward to seeing how this integrates with our existing systems. The analytics features are particularly interesting.</p>
+                  <ul>
+                    <li><i class="fa-solid fa-calendar"></i> 14 Jan 2024</li>
+                    <li><i class="fa-solid fa-reply"></i> Reply</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Sidebar -->
+        <div class="col-lg-4">
+          <div class="news-sidebar">
+            <!-- Search Widget -->
+            <div class="news-sidebar__item">
+              <div class="section-title">
+                <h4>Search</h4>
+              </div>
+              <form class="news-sidebar__search">
+                <input type="text" placeholder="Search..." />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="news-sidebar__item">
+              <div class="section-title">
+                <h4>Categories</h4>
+              </div>
+              <ul>
+                <li>
+                  <a href="#">Corporate <span>(12)</span></a>
+                </li>
+                <li>
+                  <a href="#">Technology <span>(8)</span></a>
+                </li>
+                <li>
+                  <a href="#">Finance <span>(5)</span></a>
+                </li>
+                <li>
+                  <a href="#">Product <span>(10)</span></a>
+                </li>
+                <li>
+                  <a href="#">Design <span>(7)</span></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Recent Posts Widget -->
+            <div class="news-sidebar__item">
+              <div class="section-title">
+                <h4>Recent Posts</h4>
+              </div>
+              <div class="news-sidebar__feature">
+                <a href="news-details.html" class="news-sidebar__feature__item">
+                  <div class="news-sidebar__feature__item__pic">
+                    <img src="images/news/news-01.jpg" alt="Recent Post">
+                  </div>
+                  <div class="news-sidebar__feature__item__text">
+                    <h6>Launch: New Product Suite</h6>
+                    <span>15 Jan 2024</span>
+                  </div>
+                </a>
+                <a href="news-details.html" class="news-sidebar__feature__item">
+                  <div class="news-sidebar__feature__item__pic">
+                    <img src="images/news/news-02.jpg" alt="Recent Post">
+                  </div>
+                  <div class="news-sidebar__feature__item__text">
+                    <h6>Case Study: Growth</h6>
+                    <span>12 Jan 2024</span>
+                  </div>
+                </a>
+                <a href="news-details.html" class="news-sidebar__feature__item">
+                  <div class="news-sidebar__feature__item__pic">
+                    <img src="images/news/news-03.jpg" alt="Recent Post">
+                  </div>
+                  <div class="news-sidebar__feature__item__text">
+                    <h6>Inside: Culture</h6>
+                    <span>10 Jan 2024</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tags Widget -->
+            <div class="news-sidebar__item">
+              <div class="section-title">
+                <h4>Tags</h4>
+              </div>
+              <div class="news-sidebar__tags">
+                <a href="#">Business</a>
+                <a href="#">Technology</a>
+                <a href="#">Design</a>
+                <a href="#">Marketing</a>
+                <a href="#">Finance</a>
+                <a href="#">Product</a>
+                <a href="#">Strategy</a>
+                <a href="#">Innovation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__container">
+        <!-- Footer Content -->
+        <div class="footer__content">
+          <!-- About Column -->
+          <div class="footer__column footer__about">
+            <div class="footer__about-logo">
+              <span>Your Company</span>
+            </div>
+            <p>
+              We provide exceptional services and solutions to help your business grow and succeed in the digital world.
+            </p>
+            <div class="footer__social">
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="footer__column">
+            <h3>Quick Links</h3>
+            <ul class="footer__links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#about-us">About Us</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer__column">
+            <h3>Services</h3>
+            <ul class="footer__links">
+              <li><a href="index.html#services">Web Development</a></li>
+              <li><a href="index.html#services">Digital Marketing</a></li>
+              <li><a href="index.html#services">Consulting</a></li>
+              <li><a href="index.html#services">Cloud Solutions</a></li>
+              <li><a href="index.html#services">Data Analytics</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info Column -->
+          <div class="footer__column">
+            <h3>Contact Info</h3>
+            <div class="footer__contact">
+              <div class="footer__contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <p>123 Business Street<br>City, State 12345</p>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <p>+84 123 456 789</p>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <p>hello@company.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+          <p>&copy; <script>document.write(new Date().getFullYear())</script> Your Company. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendors/js/jquery/dist/jquery.min.js"></script>
+  <script src="assets/vendors/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendors/js/gsap/dist/gsap.min.js"></script>
+  <script src="assets/vendors/js/swiper/swiper-bundle.min.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
+

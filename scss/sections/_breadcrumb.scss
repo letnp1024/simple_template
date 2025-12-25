@@ -1,0 +1,62 @@
+@use '../variables' as *;
+
+// Breadcrumb Section
+.breadcrumb-section {
+  padding-top: 35px;
+  padding-bottom: $space-lg;
+  background-color: $color-bg;
+}
+
+.breadcrumb__links {
+  a {
+    font-size: 15px;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    margin-right: 18px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:after {
+      position: absolute;
+      right: -14px;
+      top: 0;
+      content: '\f105';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #888888;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: $font-weight-semibold;
+    color: #888888;
+    display: inline-block;
+  }
+}
+
+// Mobile
+@media (max-width: 991px) {
+  .breadcrumb-section {
+    padding-top: $space-lg;
+    padding-bottom: $space-md;
+  }
+
+  .breadcrumb__links {
+    a,
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
