@@ -555,42 +555,102 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-light">Portfolio</h2>
-        <p class="text-muted">Selected projects</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="images/portfolio-1.jpg" class="card-img-top" alt="Project 1">
-            <div class="card-body">
-              <h5 class="card-title">Enterprise Platform</h5>
-              <p class="card-text text-muted">Scalable platform for B2B operations.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="images/portfolio-2.jpg" class="card-img-top" alt="Project 2">
-            <div class="card-body">
-              <h5 class="card-title">Analytics Dashboard</h5>
-              <p class="card-text text-muted">Data-rich insights with clean UI.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="images/portfolio-3.jpg" class="card-img-top" alt="Project 3">
-            <div class="card-body">
-              <h5 class="card-title">Marketing Site</h5>
-              <p class="card-text text-muted">High-converting landing experiences.</p>
-            </div>
-          </div>
+  <!-- Category & Portfolio Combined Section -->
+  <section id="category-portfolio">
+    <!-- Category Sidebar (Horizontal - Top, outside container) -->
+    <div class="category-sidebar">
+      <!-- Background Image with Parallax -->
+      <img src="images/category.jpg" alt="Category Background" class="category-sidebar__bg">
+      
+      <!-- Overlay -->
+      <div class="category-sidebar__overlay"></div>
+      
+      <!-- Category Carousel -->
+      <div class="category-sidebar__content">
+        <div class="category-carousel">
+          <div class="category-item" data-category="all">All</div>
+          <div class="category-item" data-category="web">Web</div>
+          <div class="category-item" data-category="mobile">Mobile</div>
+          <div class="category-item" data-category="design">Design</div>
+          <div class="category-item" data-category="branding">Branding</div>
+          <div class="category-item" data-category="ecommerce">E-commerce</div>
         </div>
       </div>
+    </div>
+
+    <!-- Container only wraps portfolio section -->
+    <div class="category-portfolio__container">
+      <!-- Portfolio Section (Below Category) -->
+      <div class="portfolio-section">
+      <!-- Portfolio Header -->
+      <div class="portfolio-header">
+        <div class="portfolio-header__label">OUR PORTFOLIO</div>
+        <a href="#category-portfolio" class="portfolio-header__link">View All</a>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid">
+        <!-- Portfolio Item 1 -->
+        <a href="#" class="portfolio-item" data-category="web">
+          <img src="images/portfolio-1.jpg" alt="Enterprise Platform" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>Enterprise Platform</h5>
+            <p>Scalable platform for B2B operations.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio Item 2 -->
+        <a href="#" class="portfolio-item" data-category="web">
+          <img src="images/portfolio-2.jpg" alt="Analytics Dashboard" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>Analytics Dashboard</h5>
+            <p>Data-rich insights with clean UI.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio Item 3 -->
+        <a href="#" class="portfolio-item" data-category="mobile">
+          <img src="images/portfolio-3.jpg" alt="Mobile App" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>Mobile App</h5>
+            <p>Native mobile experience for iOS and Android.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio Item 4 -->
+        <a href="#" class="portfolio-item" data-category="design">
+          <img src="images/news/news-01.jpg" alt="Design System" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>Design System</h5>
+            <p>Comprehensive design system for consistency.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio Item 5 -->
+        <a href="#" class="portfolio-item" data-category="branding">
+          <img src="images/news/news-02.jpg" alt="Brand Identity" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>Brand Identity</h5>
+            <p>Complete brand identity and visual language.</p>
+          </div>
+        </a>
+
+        <!-- Portfolio Item 6 -->
+        <a href="#" class="portfolio-item" data-category="ecommerce">
+          <img src="images/news/news-03.jpg" alt="E-commerce Platform" class="portfolio-item__image">
+          <div class="portfolio-item__overlay"></div>
+          <div class="portfolio-item__content">
+            <h5>E-commerce Platform</h5>
+            <p>Full-featured online store with payment integration.</p>
+          </div>
+        </a>
+      </div>
+    </div>
     </div>
   </section>
 

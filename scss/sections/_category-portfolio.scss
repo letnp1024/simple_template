@@ -1,0 +1,295 @@
+@use '../variables' as *;
+
+// Category & Portfolio Combined Section
+#category-portfolio {
+  position: relative;
+  width: 100%;
+  background-color: $color-bg;
+  padding: $space-2xl 0;
+
+  // Container wrapper
+  .category-portfolio__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $space-lg;
+  }
+
+  // Category Sidebar (Horizontal - Top)
+  .category-sidebar {
+    position: relative;
+    width: 100%;
+    height: 200px; // Fixed height for horizontal layout
+    overflow: hidden;
+    background-color: $color-neutral;
+    margin-bottom: $space-2xl;
+    border-radius: 0;
+
+    // Background image container
+    .category-sidebar__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; // Image width matches sidebar width
+      height: 200%; // Image is much larger than container height for parallax
+      object-fit: cover;
+      transform: translateY(-25%); // Center vertically (show middle portion)
+      will-change: transform;
+    }
+
+    // Overlay
+    .category-sidebar__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-secondary, $color-secondary);
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    // Category carousel container
+    .category-sidebar__content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: $space-lg $space-2xl;
+    }
+
+    // Category carousel (horizontal)
+    .category-carousel {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: $space-md;
+      background: transparent;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    // Category item
+    .category-item {
+      padding: $space-md $space-lg;
+      color: $color-text;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: $radius-sm;
+      background: transparent;
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      height: 100%;
+
+      &:hover,
+      &.is-active {
+        color: var(--color-primary, $color-primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      &.is-active {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  // Portfolio Section (Full width below category)
+  .portfolio-section {
+    width: 100%;
+    padding: 0;
+    background-color: $color-bg;
+
+    // Portfolio header
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $space-2xl;
+      padding-bottom: $space-lg;
+      border-bottom: 1px solid rgba($color-text, 0.1);
+
+      .portfolio-header__label {
+        font-size: 0.75rem;
+        font-weight: $font-weight-semibold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-text;
+        opacity: 0.6;
+      }
+
+      .portfolio-header__link {
+        color: $color-secondary;
+        text-decoration: none;
+        font-weight: $font-weight-semibold;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+
+    // Portfolio grid
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-xl;
+    }
+
+    // Portfolio item
+    .portfolio-item {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: $radius-md;
+      cursor: pointer;
+      background-color: $color-neutral;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 1;
+      transform: scale(1);
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      // Hidden state for filtering
+      &.is-hidden {
+        opacity: 0;
+        transform: scale(0.9);
+        pointer-events: none;
+        position: absolute;
+        visibility: hidden;
+      }
+
+      // Portfolio image
+      .portfolio-item__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      // Portfolio overlay (optional - for text overlay if needed)
+      .portfolio-item__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover .portfolio-item__overlay {
+        opacity: 1;
+      }
+
+      // Portfolio content (optional - can be added later)
+      .portfolio-item__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: $space-lg;
+        color: white;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        h5 {
+          margin: 0 0 $space-sm 0;
+          font-size: 1.25rem;
+          font-weight: $font-weight-bold;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.875rem;
+          opacity: 0.9;
+        }
+      }
+
+      &:hover .portfolio-item__content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Tablet: 992px - 1199px
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .portfolio-section {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  // Mobile: ≤ 991px
+  @media (max-width: 991px) {
+    padding: $space-xl 0;
+
+    .category-portfolio__container {
+      padding: 0 $space-md;
+    }
+
+    .category-sidebar {
+      height: 150px;
+      margin-bottom: $space-xl;
+
+      .category-sidebar__bg {
+        // Disable parallax on mobile - show static image
+        transform: translateY(-25%);
+        will-change: auto;
+      }
+
+      .category-sidebar__content {
+        padding: $space-md $space-lg;
+        justify-content: flex-start;
+      }
+
+      .category-carousel {
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: $space-sm;
+        padding-bottom: $space-sm;
+        scrollbar-width: thin;
+        justify-content: flex-start;
+
+        // Hide scrollbar on mobile
+        &::-webkit-scrollbar {
+          height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: rgba($color-text, 0.3);
+          border-radius: 2px;
+        }
+      }
+
+      .category-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: $space-sm $space-md;
+        font-size: 0.75rem;
+      }
+    }
+
+    .portfolio-section {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: $space-lg;
+      }
+    }
+  }
+}
+
