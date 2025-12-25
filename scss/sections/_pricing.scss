@@ -1,0 +1,267 @@
+@use '../variables' as *;
+
+// Pricing Section
+.pricing-section {
+  padding: $space-2xl * 2 0;
+  background-color: $color-bg;
+  position: relative;
+}
+
+.pricing-section__header {
+  text-align: center;
+  margin-bottom: $space-2xl * 2;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $space-lg;
+}
+
+.pricing-section__title {
+  font-size: 48px;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin-bottom: $space-md;
+  line-height: 1.2;
+
+  @media (max-width: 991px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
+}
+
+.pricing-section__description {
+  font-size: 18px;
+  color: rgba($color-text, 0.7);
+  line-height: 1.6;
+  margin: 0;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.pricing-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-xl;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-lg;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+}
+
+// Pricing Card
+.pricing-card {
+  background: $color-neutral;
+  border-radius: $radius-lg;
+  padding: $space-2xl;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  // Popular card variant
+  &.pricing-card--popular {
+    border-color: $color-primary;
+    transform: scale(1.05);
+    z-index: 1;
+
+    @media (max-width: 991px) {
+      transform: scale(1);
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-8px);
+
+      @media (max-width: 991px) {
+        transform: translateY(-8px);
+      }
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -12px;
+      right: $space-xl;
+      background: $color-secondary;
+      color: $color-text;
+      padding: $space-xs $space-md;
+      border-radius: $radius-sm;
+      font-size: 12px;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba($color-secondary, 0.3);
+    }
+  }
+}
+
+.pricing-card__header {
+  text-align: center;
+  margin-bottom: $space-xl;
+  padding-bottom: $space-xl;
+  border-bottom: 1px solid rgba($color-text, 0.1);
+}
+
+.pricing-card__name {
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0 0 $space-md 0;
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: $space-lg 0;
+  line-height: 1;
+}
+
+.pricing-card__currency {
+  font-size: 24px;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+  margin-top: 8px;
+}
+
+.pricing-card__amount {
+  font-size: 56px;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  line-height: 1;
+}
+
+.pricing-card__period {
+  font-size: 16px;
+  color: rgba($color-text, 0.6);
+  margin-top: 12px;
+  margin-left: $space-xs;
+}
+
+.pricing-card__description {
+  font-size: 14px;
+  color: rgba($color-text, 0.7);
+  margin: $space-md 0 0 0;
+}
+
+.pricing-card__body {
+  flex: 1;
+  margin-bottom: $space-xl;
+}
+
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: $space-md 0;
+    font-size: 15px;
+    color: $color-text;
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+    border-bottom: 1px solid rgba($color-text, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    i {
+      color: $color-primary;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.pricing-card__footer {
+  margin-top: auto;
+  padding-top: $space-xl;
+  border-top: 1px solid rgba($color-text, 0.1);
+}
+
+.pricing-card__button {
+  width: 100%;
+  padding: $space-md $space-xl;
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+  display: block;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Button outline primary
+.btn-outline-primary.pricing-card__button {
+  background: transparent;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+
+  &:hover {
+    background: $color-primary;
+    color: $color-neutral;
+  }
+}
+
+// Mobile adjustments
+@media (max-width: 767px) {
+  .pricing-section {
+    padding: $space-2xl 0;
+  }
+
+  .pricing-section__header {
+    margin-bottom: $space-2xl;
+  }
+
+  .pricing-card {
+    padding: $space-xl;
+
+    &.pricing-card--popular {
+      .pricing-card__badge {
+        right: $space-lg;
+      }
+    }
+  }
+
+  .pricing-card__name {
+    font-size: 20px;
+  }
+
+  .pricing-card__amount {
+    font-size: 48px;
+  }
+
+  .pricing-card__features {
+    li {
+      font-size: 14px;
+      padding: $space-sm 0;
+    }
+  }
+}
+
