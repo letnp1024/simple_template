@@ -1,10 +1,10 @@
-// Category & News Section with Parallax and Filtering
+// Category & News Section with Parallax and Filtering (using MixItUp)
 export function initCategoryNewsSection() {
     const categoryNewsSection = document.querySelector('#category-news');
     const categorySidebar = document.querySelector('.category-sidebar');
     const categoryBg = document.querySelector('.category-sidebar__bg');
     const categoryItems = document.querySelectorAll('.category-item');
-    const newsItems = document.querySelectorAll('.news-item');
+    const newsGrid = document.querySelector('.news-grid');
     if (!categoryNewsSection || !categorySidebar || typeof gsap === 'undefined') {
         return;
     }
@@ -63,88 +63,59 @@ export function initCategoryNewsSection() {
             }, { once: true });
         }
     }
-    const newsData = Array.from(newsItems).map((item) => {
-        const category = item.getAttribute('data-category') || 'all';
-        return {
-            element: item,
-            category: category.toLowerCase(),
-        };
-    });
-    // Get all unique categories from news items
-    const allCategories = new Set(['all']);
-    newsData.forEach((item) => {
-        if (item.category && item.category !== 'all') {
-            allCategories.add(item.category);
+    // ====================
+    // CATEGORY FILTERING (using MixItUp)
+    // ====================
+    // Initialize MixItUp when DOM and library are ready
+    const initMixItUp = () => {
+        // Check if MixItUp is available
+        if (typeof mixitup === 'undefined' || !newsGrid) {
+            console.warn('MixItUp is not loaded or news grid not found');
+            return;
         }
-    });
-    // Active category state
-    let activeCategory = 'all';
-    // Filter news items based on selected category
-    const filterNews = (category) => {
-        if (category === activeCategory)
-            return; // Prevent re-filtering same category
-        activeCategory = category;
-        // Update active category item
-        categoryItems.forEach((item) => {
-            var _a;
-            const itemCategory = ((_a = item.getAttribute('data-category')) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || 'all';
-            if (itemCategory === category) {
-                item.classList.add('is-active');
-            }
-            else {
-                item.classList.remove('is-active');
-            }
+        // Initialize MixItUp
+        const mixer = mixitup(newsGrid, {
+            animation: {
+                enable: true,
+                effects: 'fade scale', // Animation effects
+                duration: 600, // Duration in ms
+                easing: 'ease',
+            },
+            controls: {
+                enable: true,
+                live: false, // Don't auto-update when new items are added
+            },
+            selectors: {
+                target: '.mix', // Selector for news items
+            },
         });
-        // Create GSAP timeline for smooth filtering animation
-        const tl = gsap.timeline();
-        // Filter logic
-        newsData.forEach((newsItem) => {
-            const shouldShow = category === 'all' || newsItem.category === category;
-            if (shouldShow) {
-                // Show item: fade in and scale up
-                if (newsItem.element.classList.contains('is-hidden')) {
-                    newsItem.element.classList.remove('is-hidden');
-                    gsap.set(newsItem.element, {
-                        opacity: 0,
-                        scale: 0.9,
-                    });
-                    tl.to(newsItem.element, {
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.4,
-                        ease: 'power2.out',
-                    }, '<0.1');
-                }
-            }
-            else {
-                // Hide item: fade out and scale down
-                if (!newsItem.element.classList.contains('is-hidden')) {
-                    tl.to(newsItem.element, {
-                        opacity: 0,
-                        scale: 0.9,
-                        duration: 0.3,
-                        ease: 'power2.in',
-                        onComplete: () => {
-                            newsItem.element.classList.add('is-hidden');
-                        },
-                    }, '<0.1');
-                }
-            }
+        // Handle category item clicks
+        categoryItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                var _a;
+                // Remove active class from all category items
+                categoryItems.forEach((catItem) => {
+                    catItem.classList.remove('is-active');
+                });
+                // Add active class to clicked item
+                item.classList.add('is-active');
+                // Get category from data-category attribute
+                const category = ((_a = item.getAttribute('data-category')) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || 'all';
+                // Convert to MixItUp filter format
+                const filterValue = category === 'all' ? '*' : `.${category}`;
+                // Use MixItUp filter
+                mixer.filter(filterValue);
+            });
         });
     };
-    // Initialize: Set "All" as active
-    const allCategoryItem = Array.from(categoryItems).find((item) => { var _a; return ((_a = item.getAttribute('data-category')) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === 'all'; });
-    if (allCategoryItem) {
-        allCategoryItem.classList.add('is-active');
+    // Initialize MixItUp when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMixItUp);
     }
-    // Category click handlers
-    categoryItems.forEach((item) => {
-        item.addEventListener('click', () => {
-            var _a;
-            const category = ((_a = item.getAttribute('data-category')) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || 'all';
-            filterNews(category);
-        });
-    });
+    else {
+        // DOM is already ready, but wait a bit for MixItUp script to load
+        setTimeout(initMixItUp, 100);
+    }
     // ====================
     // RESPONSIVE HANDLING
     // ====================

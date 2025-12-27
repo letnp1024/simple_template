@@ -1,11 +1,14 @@
-// Category & News Section with Parallax and Filtering
+// Category & News Section with Parallax and Filtering (using MixItUp)
+
+// Declare MixItUp type
+declare const mixitup: any;
 
 export function initCategoryNewsSection() {
   const categoryNewsSection = document.querySelector('#category-news') as HTMLElement | null;
   const categorySidebar = document.querySelector('.category-sidebar') as HTMLElement | null;
   const categoryBg = document.querySelector('.category-sidebar__bg') as HTMLImageElement | null;
   const categoryItems = document.querySelectorAll('.category-item') as NodeListOf<HTMLElement>;
-  const newsItems = document.querySelectorAll('.news-item') as NodeListOf<HTMLElement>;
+  const newsGrid = document.querySelector('.news-grid') as HTMLElement | null;
 
   if (!categoryNewsSection || !categorySidebar || typeof gsap === 'undefined') {
     return;
@@ -72,112 +75,63 @@ export function initCategoryNewsSection() {
   }
 
   // ====================
-  // CATEGORY FILTERING
+  // CATEGORY FILTERING (using MixItUp)
   // ====================
-  // News data structure (will be populated from HTML data attributes)
-  interface NewsItem {
-    element: HTMLElement;
-    category: string;
-  }
-
-  const newsData: NewsItem[] = Array.from(newsItems).map((item) => {
-    const category = item.getAttribute('data-category') || 'all';
-    return {
-      element: item,
-      category: category.toLowerCase(),
-    };
-  });
-
-  // Get all unique categories from news items
-  const allCategories = new Set<string>(['all']);
-  newsData.forEach((item) => {
-    if (item.category && item.category !== 'all') {
-      allCategories.add(item.category);
+  // Initialize MixItUp when DOM and library are ready
+  const initMixItUp = () => {
+    // Check if MixItUp is available
+    if (typeof mixitup === 'undefined' || !newsGrid) {
+      console.warn('MixItUp is not loaded or news grid not found');
+      return;
     }
-  });
 
-  // Active category state
-  let activeCategory = 'all';
-
-  // Filter news items based on selected category
-  const filterNews = (category: string) => {
-    if (category === activeCategory) return; // Prevent re-filtering same category
-
-    activeCategory = category;
-
-    // Update active category item
-    categoryItems.forEach((item) => {
-      const itemCategory = item.getAttribute('data-category')?.toLowerCase() || 'all';
-      if (itemCategory === category) {
-        item.classList.add('is-active');
-      } else {
-        item.classList.remove('is-active');
-      }
+    // Initialize MixItUp
+    const mixer = mixitup(newsGrid, {
+      animation: {
+        enable: true,
+        effects: 'fade scale', // Animation effects
+        duration: 600, // Duration in ms
+        easing: 'ease',
+      },
+      controls: {
+        enable: true,
+        live: false, // Don't auto-update when new items are added
+      },
+      selectors: {
+        target: '.mix', // Selector for news items
+      },
     });
 
-    // Create GSAP timeline for smooth filtering animation
-    const tl = gsap.timeline();
+    // Handle category item clicks
+    categoryItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        // Remove active class from all category items
+        categoryItems.forEach((catItem) => {
+          catItem.classList.remove('is-active');
+        });
 
-    // Filter logic
-    newsData.forEach((newsItem) => {
-      const shouldShow = category === 'all' || newsItem.category === category;
+        // Add active class to clicked item
+        item.classList.add('is-active');
 
-      if (shouldShow) {
-        // Show item: fade in and scale up
-        if (newsItem.element.classList.contains('is-hidden')) {
-          newsItem.element.classList.remove('is-hidden');
-          gsap.set(newsItem.element, {
-            opacity: 0,
-            scale: 0.9,
-          });
+        // Get category from data-category attribute
+        const category = item.getAttribute('data-category')?.toLowerCase() || 'all';
+        
+        // Convert to MixItUp filter format
+        const filterValue = category === 'all' ? '*' : `.${category}`;
 
-          tl.to(
-            newsItem.element,
-            {
-              opacity: 1,
-              scale: 1,
-              duration: 0.4,
-              ease: 'power2.out',
-            },
-            '<0.1', // Slight stagger
-          );
-        }
-      } else {
-        // Hide item: fade out and scale down
-        if (!newsItem.element.classList.contains('is-hidden')) {
-          tl.to(
-            newsItem.element,
-            {
-              opacity: 0,
-              scale: 0.9,
-              duration: 0.3,
-              ease: 'power2.in',
-              onComplete: () => {
-                newsItem.element.classList.add('is-hidden');
-              },
-            },
-            '<0.1', // Slight stagger
-          );
-        }
-      }
+        // Use MixItUp filter
+        mixer.filter(filterValue);
+      });
     });
   };
 
-  // Initialize: Set "All" as active
-  const allCategoryItem = Array.from(categoryItems).find(
-    (item) => item.getAttribute('data-category')?.toLowerCase() === 'all',
-  );
-  if (allCategoryItem) {
-    allCategoryItem.classList.add('is-active');
+  // Initialize MixItUp when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMixItUp);
+  } else {
+    // DOM is already ready, but wait a bit for MixItUp script to load
+    setTimeout(initMixItUp, 100);
   }
-
-  // Category click handlers
-  categoryItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      const category = item.getAttribute('data-category')?.toLowerCase() || 'all';
-      filterNews(category);
-    });
-  });
 
   // ====================
   // RESPONSIVE HANDLING
@@ -200,4 +154,3 @@ export function initCategoryNewsSection() {
     }, 250);
   });
 }
-

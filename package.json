@@ -20,7 +20,7 @@
     "compile:all:watch": "npm run compile:watch",
     "copy:libs": "npm-run-all copy:libs:css copy:libs:js copy:libs:fonts",
     "copy:libs:css": "copyfiles -u 1 \"node_modules/bootstrap/dist/css/*.min.css\" \"node_modules/animate.css/animate.min.css\" \"node_modules/swiper/swiper-bundle.min.css\" \"node_modules/aos/dist/aos.css\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.css\" \"node_modules/@fortawesome/fontawesome-free/css/all.min.css\" \"assets/vendors/css/\"",
-    "copy:libs:js": "copyfiles -u 1 \"node_modules/jquery/dist/jquery.min.js\" \"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js\" \"node_modules/gsap/dist/gsap.min.js\" \"node_modules/swiper/swiper-bundle.min.js\" \"node_modules/aos/dist/aos.js\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.js\" \"assets/vendors/js/\"",
+    "copy:libs:js": "copyfiles -u 1 \"node_modules/jquery/dist/jquery.min.js\" \"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js\" \"node_modules/gsap/dist/gsap.min.js\" \"node_modules/swiper/swiper-bundle.min.js\" \"node_modules/aos/dist/aos.js\" \"node_modules/smooth-scrollbar/dist/smooth-scrollbar.js\" \"node_modules/mixitup/dist/mixitup.min.js\" \"assets/vendors/js/\"",
     "copy:libs:fonts": "copyfiles -u 2 \"node_modules/@fortawesome/fontawesome-free/webfonts/*\" \"assets/fonts/\"",
     "build": "npm run copy:libs && npm run compile:sass && npm run compile:ts"
   },
@@ -44,6 +44,7 @@
     "gsap": "^3.14.1",
     "jquery": "^3.7.1",
     "jquery.ripples": "^0.6.3",
+    "mixitup": "^3.3.2",
     "particles.js": "^2.0.0",
     "postcss-cli": "^11.0.1",
     "save": "^2.9.0",
