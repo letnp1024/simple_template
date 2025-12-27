@@ -13747,7 +13747,6 @@ textarea.form-control-lg {
   border-radius: 10px;
   cursor: pointer;
   background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 1;
   transform: scale(1);
 }
