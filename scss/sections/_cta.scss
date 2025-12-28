@@ -88,23 +88,10 @@
   }
 }
 
-// Button highlight (primary)
-.btn-highlight.cta-section__button {
-  background: $color-secondary;
-  color: $color-text;
-  border: 2px solid $color-secondary;
-
-  &:hover {
-    background: $color-accent;
-    border-color: $color-accent;
-    color: $color-text;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba($color-secondary, 0.3);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+// Button primary (using global btn-primary)
+.btn-primary.cta-section__button {
+  // Styles are inherited from components/_buttons.scss
+  // Additional overrides if needed can go here
 }
 
 // Button outline dark

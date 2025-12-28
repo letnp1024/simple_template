@@ -217,16 +217,10 @@
   }
 }
 
-// Button outline primary
-.btn-outline-primary.pricing-card__button {
-  background: transparent;
-  color: $color-primary;
-  border: 2px solid $color-primary;
-
-  &:hover {
-    background: $color-primary;
-    color: $color-neutral;
-  }
+// Button outline light (using global btn-outline-light)
+.btn-outline-light.pricing-card__button {
+  // Styles are inherited from components/_buttons.scss
+  // Additional overrides if needed can go here
 }
 
 // Mobile adjustments

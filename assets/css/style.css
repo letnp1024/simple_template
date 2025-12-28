@@ -12155,10 +12155,10 @@ textarea.form-control-lg {
 
 .btn-outline-light {
   background-color: transparent;
-  color: #ffffff;
+  color: #000814;
   font-weight: 600;
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid #000814;
   padding: 16px 48px;
   transition: all 0.3s ease;
   display: inline-block;
@@ -13960,16 +13960,6 @@ textarea.form-control-lg {
 .pricing-card__button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.btn-outline-primary.pricing-card__button {
-  background: transparent;
-  color: #003566;
-  border: 2px solid #003566;
-}
-.btn-outline-primary.pricing-card__button:hover {
-  background: #003566;
-  color: #ffffff;
 }
 
 @media (max-width: 767px) {
@@ -16181,22 +16171,6 @@ textarea.form-control-lg {
     max-width: 280px;
     padding: 16px 32px;
   }
-}
-
-.btn-highlight.cta-section__button {
-  background: #ffc300;
-  color: #000814;
-  border: 2px solid #ffc300;
-}
-.btn-highlight.cta-section__button:hover {
-  background: #ffd60a;
-  border-color: #ffd60a;
-  color: #000814;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 195, 0, 0.3);
-}
-.btn-highlight.cta-section__button:active {
-  transform: translateY(0);
 }
 
 .btn-outline-light.cta-section__button {
