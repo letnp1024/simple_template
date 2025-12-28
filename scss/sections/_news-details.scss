@@ -31,9 +31,10 @@
   padding-top: 30px;
   padding-right: 30px;
   margin-top: -100px;
+  border-radius:0 $radius-md $radius-md $radius-md;
   position: relative;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: 0;
 
   .tip {
     font-size: 12px;
@@ -101,7 +102,7 @@
 
 .news-details__desc {
   margin-bottom: 40px;
-  padding: 0 50px;
+  padding: 0 0;
   margin-top: $space-2xl;
 
   p {
@@ -121,8 +122,6 @@
   position: relative;
   padding-top: 22px;
   margin-bottom: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
 
   .icon {
     height: 30px;
@@ -181,8 +180,6 @@
   background: #f5f5f5;
   padding: 14px 30px;
   margin-bottom: 55px;
-  margin-left: 50px;
-  margin-right: 50px;
   display: flex;
   justify-content: space-between;
   border-radius: $radius-sm;
@@ -226,7 +223,7 @@
 
 .news-details__comment {
   position: relative;
-  padding: 0 50px;
+  // padding: 0 50px;
   margin-bottom: $space-2xl;
 
   h5 {
@@ -332,40 +329,6 @@
   }
 }
 
-// Tablet
-@media (min-width: 768px) and (max-width: 991px) {
-  .news-details__item__title {
-    margin-right: $space-lg;
-    margin-left: $space-lg;
-  }
-
-  .news-details__desc {
-    padding: 0 $space-lg;
-  }
-
-  .news-details__quote {
-    margin-left: $space-lg;
-    margin-right: $space-lg;
-  }
-
-  .news-details__tags {
-    padding: 0 $space-lg;
-  }
-
-  .news-details__btns {
-    margin-left: $space-lg;
-    margin-right: $space-lg;
-  }
-
-  .news-details__comment {
-    padding: 0 $space-lg;
-
-    .leave-btn {
-      right: $space-lg;
-    }
-  }
-}
-
 // Mobile
 @media (max-width: 767px) {
   .news-details {
@@ -379,8 +342,6 @@
 
   .news-details__item__title {
     margin-top: -50px;
-    margin-right: $space-md;
-    margin-left: $space-md;
     padding-top: $space-lg;
     padding-right: $space-md;
 
@@ -410,8 +371,6 @@
   }
 
   .news-details__quote {
-    margin-left: $space-md;
-    margin-right: $space-md;
 
     p {
       font-size: 14px;
@@ -431,8 +390,6 @@
   }
 
   .news-details__btns {
-    margin-left: $space-md;
-    margin-right: $space-md;
     padding: $space-md;
     flex-direction: column;
     gap: $space-md;

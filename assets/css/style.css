@@ -14754,7 +14754,7 @@ textarea.form-control-lg {
   background: #ffffff;
   margin-top: -54px;
   position: relative;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 10px;
 }
 .news-page__item__text h6 {
   margin-bottom: 6px;
@@ -15072,9 +15072,10 @@ textarea.form-control-lg {
   padding-top: 30px;
   padding-right: 30px;
   margin-top: -100px;
+  border-radius: 0 10px 10px 10px;
   position: relative;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: 0;
 }
 .news-details__item__title .tip {
   font-size: 12px;
@@ -15133,7 +15134,7 @@ textarea.form-control-lg {
 
 .news-details__desc {
   margin-bottom: 40px;
-  padding: 0 50px;
+  padding: 0 0;
   margin-top: 48px;
 }
 .news-details__desc p {
@@ -15151,8 +15152,6 @@ textarea.form-control-lg {
   position: relative;
   padding-top: 22px;
   margin-bottom: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
 }
 .news-details__quote .icon {
   height: 30px;
@@ -15206,8 +15205,6 @@ textarea.form-control-lg {
   background: #f5f5f5;
   padding: 14px 30px;
   margin-bottom: 55px;
-  margin-left: 50px;
-  margin-right: 50px;
   display: flex;
   justify-content: space-between;
   border-radius: 6px;
@@ -15243,7 +15240,6 @@ textarea.form-control-lg {
 
 .news-details__comment {
   position: relative;
-  padding: 0 50px;
   margin-bottom: 48px;
 }
 .news-details__comment h5 {
@@ -15337,32 +15333,6 @@ textarea.form-control-lg {
   color: #003566;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .news-details__item__title {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-  .news-details__desc {
-    padding: 0 24px;
-  }
-  .news-details__quote {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-  .news-details__tags {
-    padding: 0 24px;
-  }
-  .news-details__btns {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-  .news-details__comment {
-    padding: 0 24px;
-  }
-  .news-details__comment .leave-btn {
-    right: 24px;
-  }
-}
 @media (max-width: 767px) {
   .news-details {
     padding-top: 32px;
@@ -15373,8 +15343,6 @@ textarea.form-control-lg {
   }
   .news-details__item__title {
     margin-top: -50px;
-    margin-right: 16px;
-    margin-left: 16px;
     padding-top: 24px;
     padding-right: 16px;
   }
@@ -15397,10 +15365,6 @@ textarea.form-control-lg {
     font-size: 14px;
     line-height: 24px;
   }
-  .news-details__quote {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
   .news-details__quote p {
     font-size: 14px;
     line-height: 24px;
@@ -15415,8 +15379,6 @@ textarea.form-control-lg {
     padding: 6px 12px 5px;
   }
   .news-details__btns {
-    margin-left: 16px;
-    margin-right: 16px;
     padding: 16px;
     flex-direction: column;
     gap: 16px;

@@ -48,7 +48,7 @@
   background: $color-neutral;
   margin-top: -54px;
   position: relative;
-  border-radius: $radius-md;
+  border-radius: 0 $radius-md $radius-md $radius-md;
 
   h6 {
     margin-bottom: 6px;
