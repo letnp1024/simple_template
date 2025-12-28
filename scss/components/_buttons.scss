@@ -1,31 +1,117 @@
 @use '../custom' as *;
 @use 'mixins' as *;
-@use '../variables' as *;
+@use '../variables' as vars;
 
 // Highlight button used in hero (Explore services, Talk to us, ...)
 .btn-highlight {
   @extend .btn !optional;
-  background-color: $color-secondary;
-  color: $color-text;
+  background-color: vars.$color-secondary;
+  color: vars.$color-text;
   font-weight: 700;
-  border-radius: $radius-md;
+  border-radius: vars.$radius-md;
   border: none;
   padding: 0.9rem 1.8rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  box-shadow: $shadow-sm;
+  box-shadow: vars.$shadow-sm;
   transition: all 0.3s ease;
 
   &:hover,
   &:focus {
-    background-color: darken($color-secondary, 6%);
-    color: $color-text;
-    box-shadow: $shadow-md;
+    background-color: darken(vars.$color-secondary, 6%);
+    color: vars.$color-text;
+    box-shadow: vars.$shadow-md;
     text-decoration: none;
   }
 
   &:active {
     transform: translateY(1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  }
+}
+
+// Primary button
+.btn-primary {
+  @extend .btn !optional;
+  background-color: vars.$color-secondary;
+  color: vars.$color-text;
+  font-weight: vars.$font-weight-semibold;
+  border-radius: vars.$radius-md;
+  border: 2px solid vars.$color-secondary;
+  padding: vars.$space-md vars.$space-2xl;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: vars.$color-accent;
+    border-color: vars.$color-accent;
+    color: vars.$color-text;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(vars.$color-secondary, 0.3);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(vars.$color-secondary, 0.2);
+  }
+}
+
+// Outline dark button
+.btn-outline-dark {
+  @extend .btn !optional;
+  background-color: transparent;
+  color: vars.$color-text;
+  font-weight: vars.$font-weight-semibold;
+  border-radius: vars.$radius-md;
+  border: 2px solid vars.$color-text;
+  padding: vars.$space-md vars.$space-2xl;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: vars.$color-text;
+    color: vars.$color-neutral;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(vars.$color-text, 0.2);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(vars.$color-text, 0.15);
+  }
+}
+
+// Outline light button (hover to primary)
+.btn-outline-light {
+  @extend .btn !optional;
+  background-color: transparent;
+  color: vars.$color-neutral;
+  font-weight: vars.$font-weight-semibold;
+  border-radius: vars.$radius-md;
+  border: 2px solid vars.$color-neutral;
+  padding: vars.$space-md vars.$space-2xl;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: vars.$color-primary;
+    border-color: vars.$color-primary;
+    color: vars.$color-neutral;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(vars.$color-primary, 0.3);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(vars.$color-primary, 0.2);
   }
 }
