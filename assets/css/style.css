@@ -15589,10 +15589,12 @@ textarea.form-control-lg {
   background: #ffffff;
   padding-top: 30px;
   padding-right: 30px;
+  padding-left: 50px;
   margin-top: -100px;
   position: relative;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: o;
+  border-radius: 0 10px 10px 10px;
 }
 .portfolio-details__item__title .tip {
   font-size: 12px;

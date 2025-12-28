@@ -30,10 +30,12 @@
   background: $color-neutral;
   padding-top: 30px;
   padding-right: 30px;
+  padding-left: 50px;
   margin-top: -100px;
   position: relative;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: o;
+  border-radius: 0 $radius-md $radius-md $radius-md;
 
   .tip {
     font-size: 12px;
