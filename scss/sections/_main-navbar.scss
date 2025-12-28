@@ -3,27 +3,67 @@
 @use '../variables' as *;
 
 .main-navbar {
+  // Default styles for non-homepage (always fixed with background)
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color-neutral, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: $z-header;
+  transition: background-color $transition-base;
+
+  // Homepage specific styles (absolute, transparent)
+  &.is-homepage {
     position: absolute;
     top: $info-row-height;
-    left: 0;
-    right: 0;   
-    z-index: 5; // 100 - cao hơn info-row (21) để luôn nằm trên
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    z-index: 5; // cao hơn info-row để luôn nằm trên
     padding: 0;
     margin-top: 0;
-    background-color: transparent;
-    transition: background-color $transition-base;
-    
-    // Khi scroll, thêm background để dễ nhìn thấy
-    // When scrolling, pin to top of viewport
-    &.is-scrolled {
-      position: fixed;
-    top: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba($color-neutral, 0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    // Homepage: white text for visibility on hero background
+    .nav-link {
+      color: $color-neutral;
+
+      &:hover {
+        color: $color-secondary;
+      }
     }
+
+    .navbar-right__widget {
+      .navbar-search {
+        .navbar-search__icon,
+        .navbar-search__label {
+          color: $color-neutral;
+
+          &:hover {
+            color: $color-secondary;
+          }
+        }
+
+        .navbar-search__label {
+          border-bottom-color: rgba($color-neutral, 0.85);
+
+          &:hover {
+            border-bottom-color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+
+  // When homepage navbar scrolls, switch to fixed with background
+  &.is-homepage.is-scrolled {
+    position: fixed;
+    top: 0;
+    background-color: rgba($color-neutral, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
     &-inner {
       background: transparent;
@@ -180,7 +220,7 @@
     .nav-link {
       font-size: 15px;
       text-transform: uppercase;
-      color: $color-neutral;
+      color: $color-text; // Default: dark text for non-homepage
       font-weight: 500;
       display: block;
       padding: 2px 0;
@@ -223,8 +263,8 @@
       }
     }
 
-    // When navbar is scrolled, change link + search colors
-    &.is-scrolled {
+    // When homepage navbar is scrolled, change from white to dark text
+    &.is-homepage.is-scrolled {
       .nav-link {
         color: $color-text;
 
@@ -410,7 +450,7 @@
         margin-right: 0;
 
         .navbar-search__icon {
-          color: $color-neutral;
+          color: $color-text; // Default: dark text for non-homepage
           font-size: 18px;
           text-decoration: none;
           display: inline-flex;
@@ -425,11 +465,11 @@
 
         .navbar-search__label {
           font-size: 13px;
-          color: $color-neutral;
+          color: $color-text; // Default: dark text for non-homepage
           text-transform: uppercase;
           letter-spacing: 0.08em;
           padding-bottom: 2px;
-          border-bottom: 1px solid rgba($color-neutral, 0.85);
+          border-bottom: 1px solid rgba($color-text, 0.85); // Default: dark border for non-homepage
           cursor: pointer;
           text-decoration: none;
           transition: color $transition-base, border-color $transition-base;

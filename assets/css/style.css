@@ -12393,21 +12393,49 @@ textarea.form-control-lg {
   }
 }
 .main-navbar {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  padding: 0;
-  margin-top: 0;
-  background-color: transparent;
-  transition: background-color 250ms ease;
-}
-.main-navbar.is-scrolled {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: background-color 250ms ease;
+}
+.main-navbar.is-homepage {
+  position: absolute;
+  top: 50px;
+  background-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  z-index: 5;
+  padding: 0;
+  margin-top: 0;
+}
+.main-navbar.is-homepage .nav-link {
+  color: #ffffff;
+}
+.main-navbar.is-homepage .nav-link:hover {
+  color: #ffc300;
+}
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__icon,
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__label {
+  color: #ffffff;
+}
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__icon:hover,
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__label:hover {
+  color: #ffc300;
+}
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__label {
+  border-bottom-color: rgba(255, 255, 255, 0.85);
+}
+.main-navbar.is-homepage .navbar-right__widget .navbar-search .navbar-search__label:hover {
+  border-bottom-color: #ffc300;
+}
+.main-navbar.is-homepage.is-scrolled {
+  position: fixed;
+  top: 0;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -12551,7 +12579,7 @@ textarea.form-control-lg {
 .main-navbar .nav-link {
   font-size: 15px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #000814;
   font-weight: 500;
   display: block;
   padding: 2px 0;
@@ -12591,24 +12619,24 @@ textarea.form-control-lg {
     border-bottom: none;
   }
 }
-.main-navbar.is-scrolled .nav-link {
+.main-navbar.is-homepage.is-scrolled .nav-link {
   color: #000814;
 }
-.main-navbar.is-scrolled .nav-link:hover {
+.main-navbar.is-homepage.is-scrolled .nav-link:hover {
   color: #003566;
 }
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon,
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon,
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
   color: #000814;
 }
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon:hover,
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__icon:hover,
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
   color: #ffc300;
 }
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label {
   border-bottom-color: rgba(0, 8, 20, 0.85);
 }
-.main-navbar.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
+.main-navbar.is-homepage.is-scrolled .navbar-right__widget .navbar-search .navbar-search__label:hover {
   border-bottom-color: #ffc300;
 }
 .main-navbar .dropdown {
@@ -12744,7 +12772,7 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__icon {
-  color: #ffffff;
+  color: #000814;
   font-size: 18px;
   text-decoration: none;
   display: inline-flex;
@@ -12756,11 +12784,11 @@ textarea.form-control-lg {
 }
 .main-navbar .navbar-right__widget .navbar-search .navbar-search__label {
   font-size: 13px;
-  color: #ffffff;
+  color: #000814;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding-bottom: 2px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 8, 20, 0.85);
   cursor: pointer;
   text-decoration: none;
   transition: color 250ms ease, border-color 250ms ease;
@@ -14637,6 +14665,7 @@ textarea.form-control-lg {
 }
 
 .breadcrumb-section {
+  margin-top: 150px;
   padding-top: 35px;
   padding-bottom: 24px;
   background-color: #ffffff;
