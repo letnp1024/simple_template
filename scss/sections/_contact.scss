@@ -1,0 +1,161 @@
+@use '../variables' as *;
+
+// Contact Section
+#contact {
+  padding: $space-2xl * 2 0;
+  position: relative;
+
+  @media (max-width: 991px) {
+    padding: $space-2xl 0;
+  }
+
+  // Override Bootstrap bg-light if needed
+  &.bg-light {
+    background-color: $color-bg !important;
+  }
+}
+
+// Contact Header (Left Column)
+#contact {
+  h2 {
+    font-size: 48px;
+    font-weight: $font-weight-light;
+    color: $color-text;
+    margin-bottom: $space-md;
+    line-height: 1.2;
+
+    @media (max-width: 991px) {
+      font-size: 36px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 28px;
+    }
+  }
+
+  > .container > .row > .col-lg-5 {
+    p {
+      font-size: 16px;
+      color: rgba($color-text, 0.7);
+      line-height: 1.6;
+      margin-bottom: $space-lg;
+
+      @media (max-width: 767px) {
+        font-size: 15px;
+        margin-bottom: $space-md;
+      }
+    }
+  }
+}
+
+// Contact Info List
+#contact {
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: $space-lg;
+      color: rgba($color-text, 0.7);
+      font-size: 16px;
+      line-height: 1.6;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      i {
+        color: $color-secondary;
+        margin-right: $space-md;
+        margin-top: 4px;
+        font-size: 18px;
+        flex-shrink: 0;
+        width: 20px;
+        text-align: center;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 15px;
+        margin-bottom: $space-md;
+
+        i {
+          font-size: 16px;
+          margin-right: $space-sm;
+          width: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Contact Form (Right Column)
+#contact {
+  form {
+    .form-label {
+      font-weight: $font-weight-semibold;
+      color: $color-text;
+      margin-bottom: $space-sm;
+      font-size: 15px;
+    }
+
+    .form-control {
+      border: 1px solid rgba($color-text, 0.2);
+      border-radius: $radius-md;
+      padding: $space-md $space-lg;
+      font-size: 15px;
+      color: $color-text;
+      background-color: $color-neutral;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $color-secondary;
+        box-shadow: 0 0 0 3px rgba($color-secondary, 0.1);
+        background-color: $color-neutral;
+      }
+
+      &::placeholder {
+        color: rgba($color-text, 0.5);
+      }
+
+      @media (max-width: 767px) {
+        padding: $space-sm $space-md;
+        font-size: 14px;
+      }
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+
+      @media (max-width: 767px) {
+        min-height: 100px;
+      }
+    }
+
+    .btn-primary {
+      margin-top: $space-md;
+      padding: $space-md $space-2xl;
+      font-size: 16px;
+      font-weight: $font-weight-semibold;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        padding: $space-md $space-xl;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+#contact {
+  @media (max-width: 991px) {
+    > .container > .row > .col-lg-5 {
+      margin-bottom: $space-2xl;
+    }
+  }
+}
+
